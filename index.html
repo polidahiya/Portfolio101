@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --darkbg: rgb(44, 44, 44);
+        --darktext: rgb(0, 0, 0);
+        --lightbg: white;
+        --lighttext: white;
+        --text: rgb(0, 170, 255);
+      }
+      ::-webkit-scrollbar {
+        width: 10px;
+        background: var(--darkbg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--text);
+        border-radius: 5px;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: poppins;
+        font-weight: 900;
+        overflow-x: hidden;
+      }
+      /*  */
+      .ripple {
+        position: absolute;
+        display: none;
+        top: 0;
+        height: 10px;
+        aspect-ratio: 1;
+        /* border: 2px solid rgb(0, 170, 255); */
+        background: rgba(0, 157, 255, 0.322);
+        border-radius: 50%;
+        z-index: 100;
+        pointer-events: none;
+      }
+      @keyframes ripple {
+        0% {
+          height: 10px;
+          transform: translate(0px, 0px);
+          background:rgba(0, 157, 255, 0.322)
+        }
+        60% {
+          height: 80px;
+          transform: translate(-35px, -35px);
+          /* border: 1px solid rgb(0, 170, 255); */
+          background:rgba(0, 157, 255, 0.322)
+        }
+        100% {
+          height: 80px;
+          transform: translate(-35px, -35px);
+          /* border: 2px solid rgba(0, 170, 255, 0); */
+          background:transparent
+        }
+      }
+      /*  */
+      .background {
+        position: fixed;
+        top: -30%;
+        left: -30%;
+        height: 160vh;
+        width: 160vw;
+        background: var(--darkbg);
+        z-index: -10;
+      }
+      .background span:nth-child(1) {
+        bottom: 10vw;
+        left: 20vw;
+        height: 35vw;
+        position: absolute;
+        border-radius: 300px 200px 600px 100px/200px 400px 200px 300px;
+        aspect-ratio: 1;
+        z-index: -1;
+        background: linear-gradient(rgb(16, 112, 196), var(--darkbg));
+        animation: bg 50s infinite linear;
+      }
+      .background span:nth-child(2) {
+        z-index: -1;
+        height: 50vw;
+        position: absolute;
+        border-radius: 300px 200px 600px 100px/200px 400px 200px 300px;
+        aspect-ratio: 1;
+        top: 10vw;
+        right: 10%;
+        background: linear-gradient(var(--darkbg), rgb(16, 112, 196));
+        animation: bg 70s infinite linear;
+      }
+      @keyframes bg {
+        0% {
+          transform: rotateZ(0deg);
+        }
+        100% {
+          transform: rotateZ(360deg);
+        }
+      }
+
+      /*  */
+
+      .nav {
+        height: 60px;
+        background: rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
+        padding: 0px 50px;
+        color: var(--lighttext);
+        font-weight: bold;
+        user-select: none;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        transition: 0.5s;
+        z-index: 20;
+      }
+
+      .leftnav {
+        cursor: pointer;
+        font-size: 25px;
+      }
+      .leftnav::first-letter {
+        color: var(--text);
+        font-size: 30px;
+      }
+      .rightnav {
+        padding-left: 100px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: end;
+        padding-right: 100px;
+      }
+      .rightnav span {
+        padding: 20px;
+        color: var(--lighttext);
+        cursor: pointer;
+        position: relative;
+      }
+
+      .rightnav span::after {
+        position: absolute;
+        content: "";
+        height: 2px;
+        width: 0%;
+        left: 17px;
+        bottom: 15px;
+        background: var(--text);
+        transition: 0.5s;
+      }
+      .rightnav span:hover::after {
+        width: calc(100% - 35px);
+      }
+      a {
+        text-decoration: none;
+      }
+
+      /*  */
+
+      .home {
+        color: white;
+        padding-top: 60px;
+        height: calc(100vh - 60px);
+        display: flex;
+        background: url("images/backmountain.webp");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        pointer-events: none;
+      }
+      .home .homedetails {
+        margin: 20vh 80px;
+      }
+      .homedetails span {
+        color: var(--text);
+      }
+      /*  */
+      .about {
+        color: white;
+        height: calc(100vh - 50px);
+        display: grid;
+        padding: 60px 30px;
+        gap: 30px;
+        align-items: center;
+        display: flex;
+        background: url();
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* background-position: 100% 100%; */
+        pointer-events: none;
+      }
+
+      .about .aboutphoto {
+        height: 300px;
+        min-width: 200px;
+        border: 1px solid;
+      }
+      .about .moredetails {
+        display: flex;
+        border: 1px solid var(--text);
+        width: 100%;
+      }
+      .about .moredetails .education,
+      .about .moredetails .address {
+        width: 100%;
+      }
+      .about .moredetails .education p,
+      .about .moredetails .address p {
+        text-align: center;
+        color: var(--text);
+      }
+      /*  */
+      .skills {
+        color: white;
+        height: calc(100vh - 50px);
+        padding: 60px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .skillsleft {
+        background: green;
+        height: 10px;
+        aspect-ratio: 1;
+      }
+      .skillsright {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .skillimagescontainer {
+        width: 460px;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+      .skillimages {
+        height: 100%;
+        display: flex;
+        animation: images 25s infinite;
+      }
+      .skillimages img {
+        width: 100%;
+      }
+      @keyframes images {
+        0% {
+          transform: translateX(0%);
+        }
+        10% {
+          transform: translateX(0%);
+        }
+        12.5% {
+          transform: translateX(-100%);
+        }
+        22.5% {
+          transform: translateX(-100%);
+        }
+        25% {
+          transform: translateX(-200%);
+        }
+        35% {
+          transform: translateX(-200%);
+        }
+        37.5% {
+          transform: translateX(-300%);
+        }
+        47.5% {
+          transform: translateX(-300%);
+        }
+        50% {
+          transform: translateX(-400%);
+        }
+        60% {
+          transform: translateX(-400%);
+        }
+        62.5% {
+          transform: translateX(-500%);
+        }
+        72.5% {
+          transform: translateX(-500%);
+        }
+        75% {
+          transform: translateX(-600%);
+        }
+        85% {
+          transform: translateX(-600%);
+        }
+        87.5% {
+          transform: translateX(-700%);
+        }
+        98.5% {
+          transform: translateX(-700%);
+        }
+        100% {
+          transform: translateX(-800%);
+        }
+      }
+
+      .skillstext {
+        border-bottom: 2px solid;
+        padding: 0px 10px;
+      }
+      .skillstext::after {
+        content: "";
+        animation: skillstext 25s infinite;
+      }
+      @keyframes skillstext {
+        0% {
+          content: "HTML";
+        }
+        10% {
+          content: "HTML";
+        }
+        12.5% {
+          content: "CSS";
+        }
+        22.5% {
+          content: "CSS";
+        }
+        25% {
+          content: "JavaScript";
+        }
+        35% {
+          content: "JavaScript";
+        }
+        37.5% {
+          content: "Bootstrap 5";
+        }
+        47.5% {
+          content: "Bootstrap 5";
+        }
+        50% {
+          content: "React JS";
+        }
+        60% {
+          content: "React JS";
+        }
+        62.5% {
+          content: "Node JS";
+        }
+        72.5% {
+          content: "NodeJS";
+        }
+        75% {
+          content: "SQL";
+        }
+        85% {
+          content: "SQL";
+        }
+        87.5% {
+          content: "MongoDB";
+        }
+        98.5% {
+          content: "MongoDB";
+        }
+        100% {
+          content: "HTML";
+        }
+      }
+      /*  */
+      .contact {
+        color: white;
+        height: 30vh;
+        /* pointer-events: none; */
+        position: relative;
+        overflow: hidden;
+      }
+      .contact .contactbg{
+        height: 300%;
+        width: 100%;
+        filter: brightness(0.3);
+      }
+      .contact2{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .contact2 a{
+        text-decoration: none;
+        color: white;
+      }
+      .icons{
+        height: 50px;
+        width: 220px;
+        border-bottom: 2px solid white;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .nthicon::after{
+        content: "Click to copy";
+        position: absolute;
+        background: black;
+        color: white;
+        display: none;
+        top: 10px;
+      }
+      .icons:hover{
+         border-bottom: 2px solid var(--text);
+       }
+       .nthicon:hover:after{
+        display: block;
+       }
+       .icons img{
+        height: 100%;
+       }
+      /*  */
+    </style>
+  </head>
+  <body>
+    <section class="nav">
+      <div class="leftnav">Parvesh</div>
+      <div class="rightnav">
+        <a href="#home"
+          ><span class="rightnavbtn" style="color: var(--text)">Home</span></a
+        >
+        <a href="#about"><span class="rightnavbtn">About</span></a>
+        <a href="#skills"><span class="rightnavbtn">Skills</span></a>
+        <a href="#contact"><span class="rightnavbtn">Contact</span></a>
+      </div>
+    </section>
+    <section class="home" id="home">
+      <div class="homedetails">
+        <h1>
+          Hi, I'm <span>Parvesh</span><br />
+          I am a <span>Web Developer</span>
+        </h1>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="aboutphoto"></div>
+      <div class="aboutdetails">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam Lorem
+          ipsum dolor, sit amet consectetur adipisicing elit. Totam
+        </p>
+        <div class="moredetails">
+          <div class="education">
+            <p>Education</p>
+          </div>
+          <div class="address">
+            <p>Address</p>
+            Village : Hayatpur <br />
+            Post Office : Wazirpur <br />
+            District : Gurgaon<br />
+            State : Haryana<br />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="skills" id="skills">
+      <div class="skillsleft"></div>
+      <div class="skillsright">
+        <div class="skillimagescontainer">
+          <div class="skillimages">
+            <img src="./images/sta-je-html.jpg" alt="" />
+            <img src="./images/sta-je-css.png" alt="" />
+            <img src="./images/javascript-illustration.png" alt="" />
+            <img src="./images/bootstrap-5.0-illustration.png" alt="" />
+            <img src="./images/react-js.jpg" alt="" />
+            <img src="./images/nodejs_cover_photo_smaller_size.png" alt="" />
+            <img src="./images/azure-sql-fundamentals-social.png" alt="" />
+            <img src="./images/emSBsESzw1x2Ya8W3Uo9LihD.png" alt="" />
+            <img src="./images/sta-je-html.jpg" alt="" />
+          </div>
+        </div>
+        <p class="skillstext"></p>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <img class="contactbg" src="./images/full-stack-web-dev.jpg" alt="">
+      <div class="contact2">
+       <div class="icons nthicon" onclick="clipboard('8700705247')"><img src="./images/phone.webp" alt="">Phone No.</div>
+       <a href="https://www.linkedin.com/in/poli-dahiya-882253261"><div class="icons"><img src="./images/in.webp" alt="">Linkedin</div></a>
+       <a href="https://api.whatsapp.com/send?phone=8700705247"><div class="icons"><img src="./images/wh.png" alt="">Whatsapp</div></a>
+       <div class="icons nthicon" onclick="clipboard('polidahiya830@gmail.com')"><img src="./images/gmail.png" alt="">Email</div>
+      </div>
+    </section>
+
+    <section class="background">
+      <span></span>
+      <span></span>
+    </section>
+    <div class="ripple"></div>
+    <script>
+      function select1(elem) {
+        return document.querySelector(elem);
+      }
+      select1("body").addEventListener("mousemove", (e) => {
+        select1(".background").style = `left: calc(-30% - ${e.pageX / 30}px);
+                                      top:  calc(-30% - ${e.pageY / 30}px) `;
+      });
+      //
+      let rightnavbtn = document.querySelectorAll(".rightnavbtn");
+      rightnavbtn.forEach((item) => {
+        item.addEventListener("click", () => {
+          rightnavbtn.forEach((item) => {
+            item.style = `var(--lighttext);`;
+          });
+          item.style = `color: var(--text);`;
+        });
+      });
+      //
+      setInterval(() => {
+        if (document.documentElement.scrollTop == 0) {
+          select1(".nav").style = "background:transparent";
+        } else {
+          select1(".nav").style = "background:black";
+        }
+        //
+        if (document.documentElement.scrollTop < window.innerHeight - 100) {
+          select1(".leftnav").innerText = "Parvesh";
+        }
+        if (
+          document.documentElement.scrollTop >= window.innerHeight - 100 &&
+          document.documentElement.scrollTop < 2 * (window.innerHeight - 100)
+        ) {
+          select1(".leftnav").innerText = "About";
+        }
+        if (
+          document.documentElement.scrollTop > 2 * (window.innerHeight - 100) &&
+          document.documentElement.scrollTop < 3 * (window.innerHeight - 100)
+        ) {
+          select1(".leftnav").innerText = "Skills";
+        }
+        if (
+          document.documentElement.scrollTop >
+          3 * (window.innerHeight - 100)
+        ) {
+          select1(".leftnav").innerText = "Contact";
+        }
+      });
+      //
+      document.body.addEventListener("click", (e) => {
+        select1(".ripple").style = `display:block;animation: ripple 0.2s ;top:${
+          e.pageY - 5
+        }px;left:${e.pageX - 5}px;`;
+        setTimeout(() => {
+          select1(".ripple").style = `display:none;`;
+        }, 200);
+      });
+      // 
+      function clipboard(text) {
+      navigator.clipboard.writeText(text)
+    }
+    </script>
+  </body>
+</html>
