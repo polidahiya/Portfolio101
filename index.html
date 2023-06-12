@@ -189,7 +189,7 @@
         padding-top: 60px;
         height: calc(100vh - 60px);
         display: flex;
-        background: url("images/backmountain.webp");
+        background: url("images/profile1.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: 100% 100%;
@@ -478,11 +478,49 @@
           row-gap: 20px;
         }
       }
+      @media screen and (width<800px) {
+        .home {
+        background-position: 160px 100%;
+      }
+    }
+      @media screen and (width<657px) {
+        .nav {
+       
+      }
+      .rightnavbutton{
+        display: block;
+        height: 30px;
+        aspect-ratio: 1;
+        position: absolute;
+        right: 150px;
+      }
+      .rightnavbutton:hover ~ .rightnav{
+        display: flex;
+      }
+        .rightnav {
+        width: 100%;
+        margin-top: 270px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        align-items: end;
+        display: none;
+        padding-top: 30px;
+      }
+      .rightnav:hover{
+        display: flex;
+      }
+      .rightnav span{
+        height: 50px;
+      }
+      }
     </style>
   </head>
   <body>
     <section class="nav">
       <div class="leftnav">Parvesh</div>
+      <button class="rightnavbutton"></button>
       <div class="rightnav">
         <a href="#home"
           ><span class="rightnavbtn" style="color: var(--text)">Home</span></a
