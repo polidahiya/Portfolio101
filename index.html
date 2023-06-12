@@ -202,13 +202,36 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: 100% 100%;
-        pointer-events: none;
+        /* pointer-events: none; */
       }
       .home .homedetails {
         margin: 20vh 80px;
       }
       .homedetails span {
         color: var(--text);
+      }
+      .button{
+        color: white;
+        border: 2px solid white;
+        padding: 5px 15px;
+        position: relative;
+      }
+      .button::after{
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 0px;
+        background: var(--text);
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+        transition: 0.4s;
+      }
+      .button:hover{
+        text-shadow: 1px 1px 1px black;
+      }
+      .button:hover.button::after {
+        width: 100%;
       }
       /*  */
       .about {
@@ -222,7 +245,6 @@
         background: url();
         background-size: contain;
         background-repeat: no-repeat;
-        /* background-position: 100% 100%; */
         pointer-events: none;
       }
 
@@ -569,6 +591,13 @@
           Hi, I'm <span>Parvesh</span><br />
           I am a <span>Web Developer</span>
         </h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="images/full-stack-web-dev.jpg" download="" class="button cv">download cv</a>
+        <a href="https://github.com/polidahiya" class="button github">Visit GitHub</a>
       </div>
     </section>
     <section class="about" id="about">
