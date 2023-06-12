@@ -291,17 +291,7 @@
         row-gap: 20px;
         column-gap: 20px;
       }
-      .skillsleft:hover {
-        background: linear-gradient(
-          black,
-          transparent,
-          transparent,
-          transparent,
-          transparent,
-          transparent,
-          black
-        );
-      }
+     
       .skillsleftskillcontainer {
         text-align: center;
       }
@@ -537,7 +527,7 @@
         .home .homedetails {
           margin: 40vh 40px;
         }
-        
+
         /* .button {
          transform: translateY(-100px);
         } */
@@ -651,7 +641,7 @@
           Hi, I'm <span>Parvesh</span><br />
           I am a <span>Web Developer</span>
         </h1>
-        
+
         <a href="images/full-stack-web-dev.jpg" download="" class="button cv"
           >download cv</a
         >
@@ -852,27 +842,35 @@
         }
         //
         if (document.documentElement.scrollTop < window.innerHeight - 100) {
-          select1(".leftnav").innerText = "Parvesh";
+          setnav(0);
         }
         if (
           document.documentElement.scrollTop >= window.innerHeight - 100 &&
           document.documentElement.scrollTop < 2 * (window.innerHeight - 100)
         ) {
-          select1(".leftnav").innerText = "About";
+          setnav(1);
         }
         if (
           document.documentElement.scrollTop > 2 * (window.innerHeight - 100) &&
           document.documentElement.scrollTop < 3 * (window.innerHeight - 100)
         ) {
-          select1(".leftnav").innerText = "Skills";
+          setnav(2);
         }
         if (
           document.documentElement.scrollTop >
           3 * (window.innerHeight - 100)
         ) {
-          select1(".leftnav").innerText = "Contact";
+          setnav(3);
         }
       });
+      function setnav(value) {
+        rightnavbtn.forEach((item, index) => {
+          item.style = `var(--lighttext);`;
+          if (index == value) {
+            item.style = `color: var(--text);`;
+          }
+        });
+      }
       //
       document.body.addEventListener("click", (e) => {
         select1(".ripple").style = `display:block;animation: ripple 0.2s ;top:${
