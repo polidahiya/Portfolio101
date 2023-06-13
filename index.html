@@ -544,37 +544,31 @@
           aspect-ratio: 1;
           position: absolute;
           right: 150px;
+          z-index: 5;
         }
-        .rightnavbutton:hover ~ .rightnav {
-          display: flex;
-        }
-        .rightnav {
-          width: 100%;
-          margin-top: 270px;
-          position: relative;
+        .floatingrightnav{
+          padding: 60px 0px;
+          position: fixed;
+          top: 0px;
+          left: 100%;
+          height: 100vh;
+          width: 200px;
+          background: var(--dark);
           display: flex;
           flex-direction: column;
-          row-gap: 40px;
-          align-items: end;
-          display: none;
-          padding-top: 30px;
+          justify-content:start;
+          gap: 20px;
         }
-        .rightnav::before {
-          content: "";
-          height: 115%;
-          width: 100px;
-          background: var(--dark);
-          position: absolute;
-          top: 0;
-          right: 10;
-          z-index: -10;
-          border-radius: 20px;
-        }
-        .rightnav:hover {
+        .floatingrightnav:hover{
           display: flex;
+          left: calc(100% - 200px);
         }
-        .rightnav span {
-          height: 50px;
+        .rightnavbutton:hover ~ .floatingrightnav {
+          display: flex;
+          left: calc(100% - 200px);
+        }
+        .rightnav {
+          display: none;
         }
         /*  */
         /* .about .moredetails {
@@ -659,6 +653,15 @@
           </g>
         </svg>
       </button>
+      <div class="rightnav floatingrightnav">
+        <a href="#home"
+          ><span class="rightnavbtn" style="color: var(--text)">Home</span></a
+        >
+        <a href="#about"><span class="rightnavbtn">About</span></a>
+        <a href="#skills"><span class="rightnavbtn">Skills</span></a>
+        <a href="#contact"><span class="rightnavbtn">Contact</span></a>
+        <a  onclick="changemode()"><span class="rightnavbtn mode" id="mode">Light Mode</span></a>
+      </div>
       <div class="rightnav">
         <a href="#home"
           ><span class="rightnavbtn" style="color: var(--text)">Home</span></a
