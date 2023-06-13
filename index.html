@@ -657,7 +657,8 @@
           </g>
         </svg>
       </button>
-      <div class="rightnav floatingrightnav">
+      
+      <div class="rightnav">
         <a href="#home"
           ><span class="rightnavbtn" style="color: var(--text)">Home</span></a
         >
@@ -666,7 +667,7 @@
         <a href="#contact"><span class="rightnavbtn">Contact</span></a>
         <a  onclick="changemode()"><span class="rightnavbtn mode" id="mode">Light Mode</span></a>
       </div>
-      <div class="rightnav">
+      <div class="floatingrightnav rightnav">
         <a href="#home"
           ><span class="rightnavbtn" style="color: var(--text)">Home</span></a
         >
@@ -870,6 +871,8 @@
                                       top:  calc(-30% - ${e.pageY / 30}px) `;
       });
       //
+
+      let floatingrightnav = document.querySelectorAll(".floatingrightnav");
       let rightnavbtn = document.querySelectorAll(".rightnavbtn");
       rightnavbtn.forEach((item) => {
         item.addEventListener("click", () => {
@@ -888,34 +891,35 @@
         }
         //
         if (document.documentElement.scrollTop < window.innerHeight - 100) {
-          setnav(0);
+          setnav(0,5);
         }
         if (
           document.documentElement.scrollTop >= window.innerHeight - 100 &&
           document.documentElement.scrollTop < 2 * (window.innerHeight - 100)
         ) {
-          setnav(1);
+          setnav(1,6);
         }
         if (
           document.documentElement.scrollTop > 2 * (window.innerHeight - 100) &&
           document.documentElement.scrollTop < 3 * (window.innerHeight - 100)
         ) {
-          setnav(2);
+          setnav(2,7);
         }
         if (
           document.documentElement.scrollTop >
           3 * (window.innerHeight - 100)
         ) {
-          setnav(3);
+          setnav(3,8);
         }
       });
-      function setnav(value) {
+      function setnav(value1,value2) {
         rightnavbtn.forEach((item, index) => {
-          item.style = `var(--light);`;
-          if (index == value) {
+          item.style = `color:var(--light);`;
+          if (index == value1 || index==value2) {
             item.style = `color: var(--text);`;
           }
         });
+       
       }
       //
       document.body.addEventListener("click", (e) => {
