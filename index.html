@@ -16,15 +16,13 @@
         cursor: none !important;
       }
       :root {
-        --darkbg: rgb(44, 44, 44);
-        --darktext: rgb(0, 0, 0);
-        --lightbg: white;
-        --lighttext: white;
+        --dark: rgb(44, 44, 44);
+        --light: white;
         --text: rgb(0, 170, 255);
       }
       ::-webkit-scrollbar {
         width: 10px;
-        background: var(--darkbg);
+        background: var(--dark);
       }
       ::-webkit-scrollbar-thumb {
         background: var(--text);
@@ -73,7 +71,6 @@
         height: 12px;
         aspect-ratio: 1;
         border-radius: 24px;
-        background-color: black;
         position: fixed;
         top: 0;
         left: 0;
@@ -87,7 +84,7 @@
         left: -30%;
         height: 160vh;
         width: 160vw;
-        background: var(--darkbg);
+        background: var(--dark);
         z-index: -10;
       }
       .background span:nth-child(1) {
@@ -98,7 +95,7 @@
         border-radius: 300px 200px 600px 100px/200px 400px 200px 300px;
         aspect-ratio: 1;
         z-index: -1;
-        background: linear-gradient(rgb(16, 112, 196), var(--darkbg));
+        background: linear-gradient(rgb(16, 112, 196), var(--dark));
         animation: bg 50s infinite linear;
       }
       .background span:nth-child(2) {
@@ -109,7 +106,7 @@
         aspect-ratio: 1;
         top: 10vw;
         right: 10%;
-        background: linear-gradient(var(--darkbg), rgb(16, 112, 196));
+        background: linear-gradient(var(--dark), rgb(16, 112, 196));
         animation: bg 70s infinite linear;
       }
       @keyframes bg {
@@ -125,11 +122,10 @@
 
       .nav {
         height: 60px;
-        background: rgb(0, 0, 0);
         display: flex;
         align-items: center;
         padding: 0px 50px;
-        color: var(--lighttext);
+        color: var(--light);
         font-weight: bold;
         user-select: none;
         position: fixed;
@@ -166,7 +162,7 @@
       }
       .rightnav span {
         padding: 20px;
-        color: var(--lighttext);
+        color: var(--light);
         cursor: pointer;
         position: relative;
       }
@@ -191,7 +187,7 @@
       /*  */
 
       .home {
-        color: white;
+        color: var(--light);
         padding-top: 60px;
         height: calc(100vh - 60px);
         display: flex;
@@ -210,8 +206,8 @@
         margin-top: 100px;
       }
       .button {
-        color: white;
-        border: 2px solid white;
+        color: var(--light);
+        border: 2px solid var(--light);
         padding: 5px 15px;
         position: relative;
         margin-top: 100px;
@@ -228,14 +224,14 @@
         transition: 0.4s;
       }
       .button:hover {
-        text-shadow: 1px 1px 1px black;
+        text-shadow: 1px 1px 1px var(--dark);
       }
       .button:hover.button::after {
         width: 100%;
       }
       /*  */
       .about {
-        color: white;
+        color: var(--light);
         height: calc(100vh - 50px);
         display: grid;
         padding: 60px 30px;
@@ -261,21 +257,25 @@
       }
       .about .moredetails {
         display: flex;
-        border: 1px solid var(--text);
+        border: 1px solid;
         width: 100%;
       }
       .about .moredetails .education,
       .about .moredetails .address {
         width: 100%;
       }
-      .about .moredetails .education p,
-      .about .moredetails .address p {
+      .about .moredetails .education h3,
+      .about .moredetails .address h3{
         text-align: center;
         color: var(--text);
       }
+      .about .moredetails .education p,
+      .about .moredetails .address p{
+        text-align: center;
+      }
       /*  */
       .skills {
-        color: white;
+        color: var(--light);
         height: calc(100vh - 50px);
         padding: 60px 30px;
         display: flex;
@@ -306,9 +306,10 @@
         grid-column-start: 1;
         grid-column-end: 5;
         text-align: center;
-        background: black;
+        background: var(--dark);
         border-radius: 20px;
         color: var(--text);
+        border: 2px solid var(--text);
       }
       .skillsright {
         height: 100%;
@@ -448,7 +449,7 @@
 
       /*  */
       .contact {
-        color: white;
+        color: var(--light);
         height: 30vh;
         /* pointer-events: none; */
         position: relative;
@@ -470,12 +471,13 @@
       }
       .contact2 a {
         text-decoration: none;
-        color: white;
+        color: var(--light);
       }
       .icons {
         height: 50px;
         width: 220px;
-        border-bottom: 2px solid white;
+        color:aliceblue;
+        border-bottom: 2px solid aliceblue;
         overflow: hidden;
         display: flex;
         justify-content: center;
@@ -485,10 +487,11 @@
       .nthicon::after {
         content: "Click to copy";
         position: absolute;
-        background: black;
-        color: white;
+        background: var(--dark);
+        color: var(--light);
         display: none;
         top: 10px;
+        padding: 0px 20px;
       }
       .icons:hover {
         border-bottom: 2px solid var(--text);
@@ -560,7 +563,7 @@
           content: "";
           height: 115%;
           width: 100px;
-          background: rgb(51, 51, 51);
+          background: var(--dark);
           position: absolute;
           top: 0;
           right: 10;
@@ -573,7 +576,34 @@
         .rightnav span {
           height: 50px;
         }
+        /*  */
+        /* .about .moredetails {
+          display: flex;
+          border: 1px solid var(--light);
+          width: 100%;
+        }
+        .about .moredetails .education,
+        .about .moredetails .address {
+          width: 100%;
+        }
+        .about .moredetails .education{
 
+        }
+        .about .moredetails .address {
+          display: none;
+        }
+        .about .moredetails .education>p,
+        .about .moredetails .address>p {
+          text-align: center;
+          color: var(--text);
+        }
+        .about .moredetails .address + p {
+          text-align: center;
+          color: var(--text);
+          background: redx;
+        } */
+
+        /*  */
         .skillsleft {
           grid-template-columns: auto auto;
         }
@@ -636,6 +666,7 @@
         <a href="#about"><span class="rightnavbtn">About</span></a>
         <a href="#skills"><span class="rightnavbtn">Skills</span></a>
         <a href="#contact"><span class="rightnavbtn">Contact</span></a>
+        <a  onclick="changemode()"><span class="rightnavbtn mode" id="mode">Light Mode</span></a>
       </div>
     </section>
     <section class="home" id="home">
@@ -671,15 +702,19 @@
         </p>
         <div class="moredetails">
           <div class="education">
-            <p>Education</p>
+            <h3>Education</h3>
+            <hr>
             <p>Graduated from Maharishi</p>
           </div>
           <div class="address">
-            <p>Address</p>
+            <h3>Address</h3>
+            <hr>
+           <p>
             Village : Hayatpur <br />
             Post Office : Wazirpur <br />
             District : Gurgaon<br />
             State : Haryana<br />
+           </p>
           </div>
         </div>
       </div>
@@ -832,7 +867,7 @@
       rightnavbtn.forEach((item) => {
         item.addEventListener("click", () => {
           rightnavbtn.forEach((item) => {
-            item.style = `var(--lighttext);`;
+            item.style = `var(--light);`;
           });
           item.style = `color: var(--text);`;
         });
@@ -842,7 +877,7 @@
         if (document.documentElement.scrollTop == 0) {
           select1(".nav").style = "background:transparent";
         } else {
-          select1(".nav").style = "background:black";
+          select1(".nav").style = "background:var(--dark)";
         }
         //
         if (document.documentElement.scrollTop < window.innerHeight - 100) {
@@ -869,7 +904,7 @@
       });
       function setnav(value) {
         rightnavbtn.forEach((item, index) => {
-          item.style = `var(--lighttext);`;
+          item.style = `var(--light);`;
           if (index == value) {
             item.style = `color: var(--text);`;
           }
@@ -950,6 +985,24 @@
       }
 
       animateCircles();
+      // 
+      let modeflag=false
+      function changemode(){
+      if(modeflag){
+        document.documentElement.style=` --dark: rgb(44, 44, 44);
+        --light: white;`
+        document.getElementById("mode").innerText="Light Mode"
+        document.getElementById("Dribbble-Light-Preview").style=`fill:white`
+        modeflag=false
+      }
+      else{
+        document.documentElement.style=` --light: rgb(44, 44, 44);
+        --dark: white;`
+        document.getElementById("mode").innerText="Dark Mode"
+        document.getElementById("Dribbble-Light-Preview").style=`fill: rgb(44, 44, 44)`
+        modeflag=true
+      }
+      }
     </script>
   </body>
 </html>
