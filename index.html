@@ -495,8 +495,9 @@
         background: var(--dark);
         color: var(--light);
         display: none;
-        top: 10px;
+        transform: translateY(-25px);
         padding: 0px 20px;
+        z-index: 100;
       }
       .icons:hover {
         border-bottom: 2px solid var(--text);
@@ -931,9 +932,10 @@
           select1(".ripple").style = `display:none;`;
         }, 200);
       });
-      //
+      //contacts clipboard
       function clipboard(text) {
         navigator.clipboard.writeText(text);
+        alert("copied  "+text+"\n Press 'Enter' to close")
       }
       // tail
       const coords = { x: 0, y: 0 };
