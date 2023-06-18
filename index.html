@@ -30,6 +30,7 @@
       }
       html {
         scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
       }
       body {
         margin: 0;
@@ -200,6 +201,9 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: 100% 100%;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+
       }
       .home .homedetails {
         margin: 30vh 80px;
@@ -246,6 +250,10 @@
         background: url();
         background-size: contain;
         background-repeat: no-repeat;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+
+
       }
 
       .about .aboutphoto {
@@ -287,6 +295,10 @@
         justify-content: space-between;
         align-items: center;
         gap: 50px;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+
+
       }
 
       .skillsleft {
@@ -459,6 +471,9 @@
         /* pointer-events: none; */
         position: relative;
         overflow: hidden;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+
       }
       .contact .contactbg {
         height: 300%;
@@ -923,7 +938,7 @@
         });
        
       }
-      //
+      // ripple
       document.body.addEventListener("click", (e) => {
         select1(".ripple").style = `display:block;animation: ripple 0.2s ;top:${
           e.pageY - 5
