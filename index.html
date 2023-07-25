@@ -664,11 +664,11 @@
           position: absolute;
           box-sizing: border-box;
           margin: 0;
-          bottom: 0;
+          bottom: 50px;
           left: 0;
           background-color: var(--dark);
           border-radius: 0px 20px 0 0;
-          height: 20vh;
+          height: 25vh;
           width: 80%;
           padding-left: 20px;
           opacity: 0.9;
@@ -977,6 +977,7 @@
 
     <script>
       let tomove = document.querySelectorAll(".tomove");
+      const circles = document.querySelectorAll(".circle");
       function select1(elem) {
         return document.querySelector(elem);
       }
@@ -1034,6 +1035,7 @@
         } else {
           select1(".nav").style = "background:var(--dark)";
           //
+          
           if (window.innerWidth < 450) {
             document.querySelector(".homedetails").style.opacity = 0;
           }
@@ -1097,7 +1099,7 @@
       }
       // tail
       const coords = { x: 0, y: 0 };
-      const circles = document.querySelectorAll(".circle");
+      
 
       const colors = [
         "#ffb56b",
