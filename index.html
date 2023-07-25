@@ -258,7 +258,7 @@
         border-radius: 15px;
       }
       .aboutdetails > p {
-        max-height: 200px;
+        max-height: 150px;
         overflow-y: scroll;
       }
       .about .moredetails {
@@ -464,7 +464,6 @@
       .contact {
         color: var(--light);
         height: 30vh;
-        /* pointer-events: none; */
         position: relative;
         overflow: hidden;
         scroll-snap-align: start;
@@ -527,7 +526,20 @@
           justify-content: start;
         }
         .skillsleft {
-          min-height: 450px;
+          grid-template-columns: auto auto;
+          overflow-x: hidden;
+        }
+        .ohters {
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+        .skillsright {
+          height: 30%;
+        }
+        .skillimagescontainer {
+          width: 500px;
+          overflow: hidden;
+          border-radius: 10px;
         }
       }
       @media screen and (width<939px) {
