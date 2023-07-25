@@ -1151,7 +1151,21 @@
           modeflag = true;
         }
       }
-      }
+      // about page hide and show
+      let headings=document.querySelector(".aboutheadings").querySelectorAll("h3")
+      headings.forEach((heading,index1)=>{
+        heading.addEventListener("click",()=>{
+          headings.forEach(item1=>{item1.style.color="var(--light)" })
+          heading.style.color="var(--text)"
+          // 
+          document.querySelectorAll(".aboutshow").forEach((item2,index2)=>{
+            item2.style="display:none"
+            if(index1==index2){
+              item2.style="display:block"
+            }
+          })
+        })
+      })
     </script>
   </body>
 </html>
