@@ -980,10 +980,25 @@
       function select1(elem) {
         return document.querySelector(elem);
       }
+
+      // move bg
       select1("body").addEventListener("mousemove", (e) => {
         select1(".background").style = `left: calc(-30% - ${e.pageX / 30}px);
                                       top:  calc(-30% - ${e.pageY / 30}px) `;
       });
+
+      // move bg with gyro
+      if ('DeviceOrientationEvent' in window) {
+      window.addEventListener('deviceorientation', handleOrientation, true);
+    } else {
+      alert('DeviceOrientation API not supported on this device/browser.');
+    }
+
+    function handleOrientation(e) {
+      console.log(e);
+      select1(".background").style = `left: calc(-30% - ${e.gamma/ 30}px);
+                                      top:  calc(-30% - ${e.beta/ 30}px) `;
+    }
       //
 
       let floatingrightnav = document.querySelectorAll(".floatingrightnav");
