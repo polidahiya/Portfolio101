@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lucky</title>
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -185,7 +185,7 @@
         text-decoration: none;
       }
 
-      .floatingrightnav {
+      .floatingrightnav{
         display: none;
       }
 
@@ -203,6 +203,7 @@
         background-position: 100% 100%;
         scroll-snap-align: start;
         scroll-snap-stop: always;
+
       }
       .home .homedetails {
         margin: 30vh 80px;
@@ -241,12 +242,18 @@
       .about {
         color: var(--light);
         height: calc(100vh - 50px);
+        display: grid;
         padding: 60px 30px;
         gap: 30px;
         align-items: center;
         display: flex;
+        background: url();
+        background-size: contain;
+        background-repeat: no-repeat;
         scroll-snap-align: start;
         scroll-snap-stop: always;
+
+
       }
 
       .about .aboutphoto {
@@ -262,26 +269,21 @@
         overflow-y: scroll;
       }
       .about .moredetails {
+        display: flex;
         border: 1px solid;
         width: 100%;
       }
-      .aboutheadings,
-      .aboutdetails2 {
-        display: flex;
-        justify-content: space-around;
-      }
-      .aboutheadings {
-        color: var(--text);
-      }
-      .education,
-      .address,
-      .hobbies {
+      .about .moredetails .education,
+      .about .moredetails .address {
         width: 100%;
       }
-
-      .education p,
-      .address p,
-      .hobbies p {
+      .about .moredetails .education h3,
+      .about .moredetails .address h3{
+        text-align: center;
+        color: var(--text);
+      }
+      .about .moredetails .education p,
+      .about .moredetails .address p{
         text-align: center;
       }
       /*  */
@@ -295,6 +297,8 @@
         gap: 50px;
         scroll-snap-align: start;
         scroll-snap-stop: always;
+
+
       }
 
       .skillsleft {
@@ -469,6 +473,7 @@
         overflow: hidden;
         scroll-snap-align: start;
         scroll-snap-stop: always;
+
       }
       .contact .contactbg {
         height: 300%;
@@ -491,7 +496,7 @@
       .icons {
         height: 50px;
         width: 220px;
-        color: aliceblue;
+        color:aliceblue;
         border-bottom: 2px solid aliceblue;
         overflow: hidden;
         display: flex;
@@ -522,12 +527,11 @@
       @media screen and (width<1230px) {
         .skills {
           flex-direction: column-reverse;
-          height: calc(100vh - 50px);
+          height: calc(150vh - 50px);
           padding: 100px 30px;
-          justify-content: start;
         }
         .skillsleft {
-          min-height: 450px;
+          min-height: 400px;
         }
       }
       @media screen and (width<939px) {
@@ -537,27 +541,6 @@
           column-gap: 20px;
           row-gap: 20px;
         }
-      }
-      @media screen and (width<850px) {
-       
-      .aboutheadings,
-      .aboutdetails2 {
-        display: flex;
-        justify-content: space-around;
-      }
-      .aboutheadings {
-        color: var(--light);
-      }
-      .aboutheadings h3:first-child{
-        color: var(--text);
-
-      }
-     
-      .address,.hobbies {
-        display: none;
-      }
-
-      
       }
       @media screen and (width<800px) {
         .home {
@@ -584,7 +567,7 @@
           right: 150px;
           z-index: 5;
         }
-        .floatingrightnav {
+        .floatingrightnav{
           padding: 60px 0px;
           position: fixed;
           top: 0px;
@@ -594,10 +577,10 @@
           background: var(--dark);
           display: flex;
           flex-direction: column;
-          justify-content: start;
+          justify-content:start;
           gap: 20px;
         }
-        .floatingrightnav:hover {
+        .floatingrightnav:hover{
           display: flex;
           left: calc(100% - 200px);
         }
@@ -609,83 +592,39 @@
           display: none;
         }
         /*  */
-        .about {
-          flex-direction: column;
-          justify-content: center;
-        }
-        .about .aboutphoto {
+        /* .about .moredetails {
+          display: flex;
+          border: 1px solid var(--light);
           width: 100%;
-          height: 30%;
-          background: url("images/about\ photo.jpg");
-          background-size: cover;
-          background-position: center;
-          border-radius: 15px;
         }
+        .about .moredetails .education,
+        .about .moredetails .address {
+          width: 100%;
+        }
+        .about .moredetails .education{
+
+        }
+        .about .moredetails .address {
+          display: none;
+        }
+        .about .moredetails .education>p,
+        .about .moredetails .address>p {
+          text-align: center;
+          color: var(--text);
+        }
+        .about .moredetails .address + p {
+          text-align: center;
+          color: var(--text);
+          background: redx;
+        } */
 
         /*  */
         .skillsleft {
           grid-template-columns: auto auto;
-          overflow-x: hidden;
         }
         .ohters {
           grid-column-start: 1;
           grid-column-end: 3;
-        }
-        .skillsright {
-          height: 30%;
-        }
-        .skillimagescontainer {
-          width: 100%;
-          overflow: hidden;
-          border-radius: 10px;
-        }
-      }
-
-      /* mobile */
-      @media screen and (width<450px) {
-        .home {
-          background-size: cover;
-          background-position: center;
-          position: relative;
-        }
-        .home .homedetails {
-          position: absolute;
-          box-sizing: border-box;
-          margin: 0;
-          bottom: 0;
-          left: 0;
-          background-color: var(--dark);
-          border-radius: 0px 20px 0 0;
-          height: 20vh;
-          width: 80%;
-          padding-left: 20px;
-          opacity: 0.9;
-          transition: 0.2s;
-        }
-        .home h1 {
-          transition: 1s;
-        }
-        .buttons {
-          transition: 1s;
-        }
-        .homemove {
-          transform: translateX(-100vw);
-        }
-        .background {
-          top: -30vh;
-          left: -30vw;
-          height: 160vh;
-          width: 160vw;
-        }
-        .background span:nth-child(1) {
-          bottom: 50vw;
-          left: 20vw;
-          height: 90vw;
-        }
-        .background span:nth-child(2) {
-          height: 80vw;
-          top: 40vw;
-          right: 10%;
         }
       }
     </style>
@@ -735,7 +674,7 @@
           </g>
         </svg>
       </button>
-
+      
       <div class="rightnav">
         <a href="#home"
           ><span class="rightnavbtn" style="color: var(--text)">Home</span></a
@@ -743,9 +682,7 @@
         <a href="#about"><span class="rightnavbtn">About</span></a>
         <a href="#skills"><span class="rightnavbtn">Skills</span></a>
         <a href="#contact"><span class="rightnavbtn">Contact</span></a>
-        <a onclick="changemode()"
-          ><span class="rightnavbtn mode" id="mode">Light Mode</span></a
-        >
+        <a  onclick="changemode()"><span class="rightnavbtn mode" id="mode">Light Mode</span></a>
       </div>
       <div class="floatingrightnav rightnav">
         <a href="#home"
@@ -754,18 +691,16 @@
         <a href="#about"><span class="rightnavbtn">About</span></a>
         <a href="#skills"><span class="rightnavbtn">Skills</span></a>
         <a href="#contact"><span class="rightnavbtn">Contact</span></a>
-        <a onclick="changemode()"
-          ><span class="rightnavbtn mode" id="mode">Light Mode</span></a
-        >
+        <a  onclick="changemode()"><span class="rightnavbtn mode" id="mode">Light Mode</span></a>
       </div>
     </section>
     <section class="home" id="home">
       <div class="homedetails">
-        <h1 class="tomove homemove">
+        <h1>
           Hi, I'm <span>Parvesh</span><br />
           I am a <span>Web Developer</span>
         </h1>
-        <div class="tomove buttons homemove">
+        <div class="buttons">
           <a href="images/full-stack-web-dev.jpg" download="" class="button cv"
             >download cv</a
           >
@@ -791,39 +726,20 @@
           client requirements and enhances the user experience.
         </p>
         <div class="moredetails">
-          <div class="aboutheadings">
+          <div class="education">
             <h3>Education</h3>
-            <h3>Address</h3>
-            <h3>Hobbies</h3>
+            <hr>
+            <p>Graduated from Maharishi</p>
           </div>
-          <div class="aboutdetails2">
-            <div class="education aboutshow">
-              <hr />
-              <p>
-                Bachelor of Science(Computer Science), Maharshi Dayanand
-                University
-              </p>
-              <p>
-                Masters in Informatics and Communication(Persuing), University
-                of Delhi
-              </p>
-            </div>
-            <div class="address aboutshow">
-              <hr />
-              <p>
-                Village : Hayatpur <br />
-                Post Office : Wazirpur <br />
-                District : Gurgaon<br />
-                State : Haryana<br />
-              </p>
-            </div>
-            <div class="hobbies aboutshow">
-              <hr />
-              <p>
-                Gaming<br />
-                Photo/Video Editing
-              </p>
-            </div>
+          <div class="address">
+            <h3>Address</h3>
+            <hr>
+           <p>
+            Village : Hayatpur <br />
+            Post Office : Wazirpur <br />
+            District : Gurgaon<br />
+            State : Haryana<br />
+           </p>
           </div>
         </div>
       </div>
@@ -964,7 +880,6 @@
     <!--  -->
 
     <script>
-      let tomove = document.querySelectorAll(".tomove");
       function select1(elem) {
         return document.querySelector(elem);
       }
@@ -988,71 +903,40 @@
       setInterval(() => {
         if (document.documentElement.scrollTop == 0) {
           select1(".nav").style = "background:transparent";
-          //
-          if (window.innerWidth < 450) {
-            document.querySelector(".homedetails").style.opacity = 0.9;
-          }
-          tomove.forEach((item, index) => {
-            setTimeout(() => {
-              if (index == 0) {
-                item.classList.remove("homemove");
-              }
-            }, 200);
-            setTimeout(() => {
-              if (index == 1) {
-                item.classList.remove("homemove");
-              }
-            }, 600);
-          });
         } else {
           select1(".nav").style = "background:var(--dark)";
-          //
-          if (window.innerWidth < 450) {
-            document.querySelector(".homedetails").style.opacity = 0;
-          }
-          tomove.forEach((item, index) => {
-            setTimeout(() => {
-              if (index == 0) {
-                item.classList.add("homemove");
-              }
-            }, 200);
-            setTimeout(() => {
-              if (index == 1) {
-                item.classList.add("homemove");
-              }
-            }, 600);
-          });
         }
         //
         if (document.documentElement.scrollTop < window.innerHeight - 100) {
-          setnav(0, 5);
+          setnav(0,5);
         }
         if (
           document.documentElement.scrollTop >= window.innerHeight - 100 &&
           document.documentElement.scrollTop < 2 * (window.innerHeight - 100)
         ) {
-          setnav(1, 6);
+          setnav(1,6);
         }
         if (
           document.documentElement.scrollTop > 2 * (window.innerHeight - 100) &&
           document.documentElement.scrollTop < 3 * (window.innerHeight - 100)
         ) {
-          setnav(2, 7);
+          setnav(2,7);
         }
         if (
           document.documentElement.scrollTop >
           3 * (window.innerHeight - 100)
         ) {
-          setnav(3, 8);
+          setnav(3,8);
         }
       });
-      function setnav(value1, value2) {
+      function setnav(value1,value2) {
         rightnavbtn.forEach((item, index) => {
           item.style = `color:var(--light);`;
-          if (index == value1 || index == value2) {
+          if (index == value1 || index==value2) {
             item.style = `color: var(--text);`;
           }
         });
+       
       }
       // ripple
       document.body.addEventListener("click", (e) => {
@@ -1066,7 +950,7 @@
       //contacts clipboard
       function clipboard(text) {
         navigator.clipboard.writeText(text);
-        alert("copied  " + text + "\n Press 'Enter' to close");
+        alert("copied  "+text+"\n Press 'Enter' to close")
       }
       // tail
       const coords = { x: 0, y: 0 };
@@ -1130,44 +1014,24 @@
       }
 
       animateCircles();
-      //
-      let modeflag = false;
-      function changemode() {
-        if (modeflag) {
-          document.documentElement.style = ` --dark: rgb(44, 44, 44);
-        --light: white;`;
-          document.getElementById("mode").innerText = "Light Mode";
-          document.getElementById(
-            "Dribbble-Light-Preview"
-          ).style = `fill:white`;
-          modeflag = false;
-        } else {
-          document.documentElement.style = ` --light: rgb(44, 44, 44);
-        --dark: white;`;
-          document.getElementById("mode").innerText = "Dark Mode";
-          document.getElementById(
-            "Dribbble-Light-Preview"
-          ).style = `fill: rgb(44, 44, 44)`;
-          modeflag = true;
-        }
+      // 
+      let modeflag=false
+      function changemode(){
+      if(modeflag){
+        document.documentElement.style=` --dark: rgb(44, 44, 44);
+        --light: white;`
+        document.getElementById("mode").innerText="Light Mode"
+        document.getElementById("Dribbble-Light-Preview").style=`fill:white`
+        modeflag=false
       }
-
-      
-      // about page hide and show
-      let headings=document.querySelector(".aboutheadings").querySelectorAll("h3")
-      headings.forEach((heading,index1)=>{
-        heading.addEventListener("click",()=>{
-          headings.forEach(item1=>{item1.style.color="var(--light)" })
-          heading.style.color="var(--text)"
-          // 
-          document.querySelectorAll(".aboutshow").forEach((item2,index2)=>{
-            item2.style="display:none"
-            if(index1==index2){
-              item2.style="display:block"
-            }
-          })
-        })
-      })
+      else{
+        document.documentElement.style=` --light: rgb(44, 44, 44);
+        --dark: white;`
+        document.getElementById("mode").innerText="Dark Mode"
+        document.getElementById("Dribbble-Light-Preview").style=`fill: rgb(44, 44, 44)`
+        modeflag=true
+      }
+      }
     </script>
   </body>
 </html>
