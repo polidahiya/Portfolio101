@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lucky</title>
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"
+    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -551,25 +555,22 @@
         }
       }
       @media screen and (width<850px) {
-       
-      .aboutheadings,
-      .aboutdetails2 {
-        display: flex;
-        justify-content: space-around;
-      }
-      .aboutheadings {
-        color: var(--light);
-      }
-      .aboutheadings h3:first-child{
-        color: var(--text);
+        .aboutheadings,
+        .aboutdetails2 {
+          display: flex;
+          justify-content: space-around;
+        }
+        .aboutheadings {
+          color: var(--light);
+        }
+        .aboutheadings h3:first-child {
+          color: var(--text);
+        }
 
-      }
-     
-      .address,.hobbies {
-        display: none;
-      }
-
-      
+        .address,
+        .hobbies {
+          display: none;
+        }
       }
       @media screen and (width<800px) {
         .home {
@@ -831,10 +832,45 @@
             </div>
             <div class="hobbies aboutshow">
               <hr />
-              <p>
-                Gaming<br />
-                Photo/Video Editing
-              </p>
+              <div
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  flex-direction: column;
+                "
+              >
+                <span
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+                  "
+                  ><model-viewer
+                    style="height: 50px; width: 50px"
+                    src="./images/game pad.gltf"
+                    shadow-intensity="2"
+                    auto-rotate
+                  ></model-viewer>
+                  <p>Gaming</p></span
+                >
+                <span
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+                  "
+                  ><model-viewer
+                    style="height: 50px; width: 50px"
+                    src="./images/camera.gltf"
+                    shadow-intensity="2"
+                    auto-rotate
+                  ></model-viewer>
+                  <p>Photo/Video Editing</p></span
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -989,17 +1025,21 @@
       });
 
       // move bg with gyro
-      if ('DeviceOrientationEvent' in window) {
-      window.addEventListener('deviceorientation', handleOrientation, true);
-    } else {
-      alert('DeviceOrientation API not supported on this device/browser.');
-    }
+      if ("DeviceOrientationEvent" in window) {
+        window.addEventListener("deviceorientation", handleOrientation, true);
+      } else {
+        alert("DeviceOrientation API not supported on this device/browser.");
+      }
 
-    function handleOrientation(e) {
-      console.log(e);
-      select1(".background").style = `left: calc(-30% - ${Math.floor(-e.gamma)*1.5}px);
-                                      top:  calc(-30% - ${Math.floor(-e.beta)*1.5}px) `;
-    }
+      function handleOrientation(e) {
+        console.log(e);
+        select1(".background").style = `left: calc(-30% - ${
+          Math.floor(-e.gamma) * 1.5
+        }px);
+                                      top:  calc(-30% - ${
+                                        Math.floor(-e.beta) * 1.5
+                                      }px) `;
+      }
       //
 
       let floatingrightnav = document.querySelectorAll(".floatingrightnav");
@@ -1035,7 +1075,7 @@
         } else {
           select1(".nav").style = "background:var(--dark)";
           //
-          
+
           if (window.innerWidth < 450) {
             document.querySelector(".homedetails").style.opacity = 0;
           }
@@ -1099,7 +1139,6 @@
       }
       // tail
       const coords = { x: 0, y: 0 };
-      
 
       const colors = [
         "#ffb56b",
@@ -1181,20 +1220,24 @@
         }
       }
       // about page hide and show
-      let headings=document.querySelector(".aboutheadings").querySelectorAll("h3")
-      headings.forEach((heading,index1)=>{
-        heading.addEventListener("click",()=>{
-          headings.forEach(item1=>{item1.style.color="var(--light)" })
-          heading.style.color="var(--text)"
-          // 
-          document.querySelectorAll(".aboutshow").forEach((item2,index2)=>{
-            item2.style="display:none"
-            if(index1==index2){
-              item2.style="display:block"
+      let headings = document
+        .querySelector(".aboutheadings")
+        .querySelectorAll("h3");
+      headings.forEach((heading, index1) => {
+        heading.addEventListener("click", () => {
+          headings.forEach((item1) => {
+            item1.style.color = "var(--light)";
+          });
+          heading.style.color = "var(--text)";
+          //
+          document.querySelectorAll(".aboutshow").forEach((item2, index2) => {
+            item2.style = "display:none";
+            if (index1 == index2) {
+              item2.style = "display:block";
             }
-          })
-        })
-      })
+          });
+        });
+      });
     </script>
   </body>
 </html>
