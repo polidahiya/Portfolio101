@@ -1241,7 +1241,7 @@
       let text = document.querySelector(".text");
       let i = 0;
       let textfalg=true
-      setInterval(()=>{
+      window.addEventListener('scroll',()=>{
         if (
         document.documentElement.scrollTop >= window.innerHeight - 100 &&
         document.documentElement.scrollTop < 2 * (window.innerHeight - 100)
@@ -1251,7 +1251,7 @@
           textfalg=false
         }
       }
-      },1000)
+      })
       function textanimation() {
         let interval = setInterval(() => {
           if (str[i] == undefined) {
