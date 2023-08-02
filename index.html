@@ -26,12 +26,18 @@
       }
       ::-webkit-scrollbar {
         width: 10px;
+        height: 10px;
+        border-radius: 10px;
         background: var(--dark);
       }
       ::-webkit-scrollbar-thumb {
         background: var(--text);
         border-radius: 5px;
       }
+      .allprojects::-webkit-scrollbar {
+        display: none;
+      }
+
       html {
         scroll-behavior: smooth;
         scroll-snap-type: y mandatory;
@@ -287,6 +293,138 @@
       .address p,
       .hobbies p {
         text-align: center;
+      }
+      /*  */
+      .projects {
+        color: var(--light);
+        height: calc(100vh - 50px);
+        padding: 60px 30px;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        position: relative;
+      }
+      .allprojects {
+        display: flex;
+        height: calc(100% - 50px);
+        width: 100%;
+        gap: 60px;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+      }
+      .allprojects > .projectcontainers {
+        min-width: calc(100vw - 60px);
+        height: 100%;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+        padding: 30px;
+        box-sizing: border-box;
+        display: flex;
+        gap: 30px;
+      }
+      .projleft {
+        position: relative;
+        width: 60%;
+        height: 100%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .projleft > iframe {
+        width: 100%;
+        aspect-ratio: 16/9;
+        border-radius: 10px;
+        display: none;
+      }
+      .projleft > img {
+        border-radius: 10px;
+        width: 100%;
+        aspect-ratio: 16/9;
+      }
+      .projleft:hover .projlayer {
+        opacity: 1;
+      }
+      .projlayer {
+        position: absolute;
+        width: 100%;
+        aspect-ratio: 16/9;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 10;
+        display: grid;
+        opacity: 0;
+        color: white;
+        place-items: center;
+      }
+      .preview {
+        user-select: none;
+        height: 50px;
+        width: 150px;
+        background: var(--text);
+        place-items: center;
+        border-radius: 50px;
+        margin-top: 200px;
+        display: grid;
+        transition: margin 1s, opacity 1s;
+        opacity: 0;
+      }
+      .preview:hover {
+        background: transparent;
+        border: 2px solid var(--text);
+      }
+      .projleft:hover .preview {
+        margin-top: 00px;
+        opacity: 1;
+      }
+      /* project right */
+      .projectright {
+        position: relative;
+        width: 40%;
+        height: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .projectright a {
+        position: absolute;
+        box-sizing: border-box;
+        user-select: none;
+        bottom: 10px;
+        left: calc(50% - 75px);
+        height: 50px;
+        width: 150px;
+        background: var(--text);
+        display: grid;
+        place-items: center;
+        border-radius: 50px;
+        text-decoration: none;
+        color: var(--light);
+      }
+      .projectright a:hover {
+        background: transparent;
+        border: 2px solid var(--text);
+      }
+      /* proj scroll */
+      .projscrolls {
+        height: 10px;
+        width: 200px;
+        position: absolute;
+        top: calc(100vh - 60px);
+        left: calc(50% - 100px);
+        display: flex;
+        justify-content: space-between;
+      }
+      .scrolldot {
+        height: 100%;
+        aspect-ratio: 1;
+        border-radius: 10px;
+        background: var(--light);
+        transition: 0.3s;
+      }
+      .scrolldot:first-child {
+        aspect-ratio: 8;
+        background: var(--text);
       }
       /*  */
       .skills {
@@ -700,6 +838,25 @@
           top: 40vw;
           right: 10%;
         }
+        /*  */
+        .allprojects > .projectcontainers {
+          padding: 0px;
+          flex-direction: column;
+          gap: 0px;
+        }
+        .projleft {
+        width: 100%;
+        height: 50%;
+        padding: 0;
+      }
+      .projectright {
+        width: 100%;
+        height: 100%;
+        padding: 00px;
+      }
+      .projectright a {
+        position: unset;
+      }
       }
     </style>
   </head>
@@ -754,6 +911,7 @@
           ><span class="rightnavbtn" style="color: var(--text)">Home</span></a
         >
         <a href="#about"><span class="rightnavbtn">About</span></a>
+        <a href="#projects"><span class="rightnavbtn">Projects</span></a>
         <a href="#skills"><span class="rightnavbtn">Skills</span></a>
         <a href="#contact"><span class="rightnavbtn">Contact</span></a>
         <a onclick="changemode()"
@@ -765,6 +923,7 @@
           ><span class="rightnavbtn" style="color: var(--text)">Home</span></a
         >
         <a href="#about"><span class="rightnavbtn">About</span></a>
+        <a href="#projects"><span class="rightnavbtn">Projects</span></a>
         <a href="#skills"><span class="rightnavbtn">Skills</span></a>
         <a href="#contact"><span class="rightnavbtn">Contact</span></a>
         <a onclick="changemode()"
@@ -806,7 +965,7 @@
                 University
               </p>
               <p>
-                Masters in Informatics and Communication(Persuing), University
+                Masters in Informatics and Communication(Pursuing), University
                 of Delhi
               </p>
             </div>
@@ -865,6 +1024,133 @@
         </div>
       </div>
     </section>
+    <!--  -->
+    <section class="projects" id="projects">
+      <div class="allprojects">
+        <div class="projectcontainers">
+          <div class="projleft">
+            <iframe
+              class="projectiframe"
+              src="https://polidahiya.github.io/Weather-Forcasts-website/"
+            ></iframe>
+            <img class="projimg" src="./images/proj1.png" alt="" />
+            <div class="projlayer">
+              <div class="preview" onclick="iframepreview(0)">Preview</div>
+            </div>
+          </div>
+          <div class="projectright">
+            <p>
+              Whether you're planning a weekend getaway, an outdoor event, or
+              just curious about the day ahead, our weather forecasting website
+              provides you with comprehensive data, including temperature,
+              humidity, wind speed, and more. Our user-friendly interface,
+              crafted using HTML, CSS, and JavaScript, offers a seamless
+              experience. By integrating the powerful Rapid API, we tap into a
+              vast network of weather data sources, ensuring you receive the
+              most up-to-date forecasts for your location
+            </p>
+            <a
+              href="https://polidahiya.github.io/Weather-Forcasts-website/"
+              target="_blank"
+              >Visit Project</a
+            >
+          </div>
+        </div>
+        <div class="projectcontainers">
+          <div class="projleft">
+            <iframe
+              class="projectiframe"
+              src="https://youtube101.onrender.com/"
+            ></iframe>
+            <img class="projimg" src="./images/proj2.png" alt="" />
+            <div class="projlayer">
+              <div class="preview" onclick="iframepreview(1)">Preview</div>
+            </div>
+          </div>
+          <div class="projectright">
+            <p>
+              This streaming website, built using the MERN (MongoDB, Express,
+              React, Node.js) stack, offers a seamless and immersive experience
+              for users to access and enjoy content. With a modern and intuitive
+              user interface powered by React, users can effortlessly navigate
+              through collection of videos. Additionally, this website empowers
+              content creators by allowing them to sign up and seamlessly upload
+              their videos, expanding our library with diverse and engaging
+              content for users to explore and enjoy.
+            </p>
+            <a href="https://youtube101.onrender.com/" target="_blank"
+              >Visit Project</a
+            >
+          </div>
+        </div>
+        <div class="projectcontainers">
+          <div class="projleft">
+            <iframe
+              class="projectiframe"
+              src="https://todolist-2vmq.onrender.com"
+            ></iframe>
+            <img class="projimg" src="./images/proj3.png" alt="" />
+            <div class="projlayer">
+              <div class="preview" onclick="iframepreview(2)">Preview</div>
+            </div>
+          </div>
+          <div class="projectright">
+            <p>
+              This MERN-based To-Do List website offers a simple and intuitive
+              task management solution, enabling users to create and track their
+              daily activities with ease. Leveraging the power of MongoDB,
+              Express, React, and Node.js, the platform ensures smooth data
+              storage for a seamless user experience. This website incorporates
+              an admin block utilizing D3.js. The admin block empowers
+              administrators with insightful analytics and graphical
+              representations of user engagement and task completion rates.
+            </p>
+            <p>
+              Note : To visit the admin page login as "admin@gmail.com" with
+              password "1234567890"
+            </p>
+            <a href="https://todolist-2vmq.onrender.com" target="_blank"
+              >Visit Project</a
+            >
+          </div>
+        </div>
+        <div class="projectcontainers">
+          <div class="projleft">
+            <iframe
+              class="projectiframe"
+              src="https://polidahiya.github.io/Super-Ludo/"
+            ></iframe>
+            <img class="projimg" src="./images/proj4.png" alt="" />
+            <div class="projlayer">
+              <div class="preview" onclick="iframepreview(3)">Preview</div>
+            </div>
+          </div>
+          <div class="projectright">
+            <p>
+              This board game project, developed using HTML, JavaScript, and
+              CSS, brings a classic and entertaining board game to life in the
+              digital realm. The interactive and visually appealing user
+              interface, created with HTML and CSS, immerses players in a
+              vibrant and engaging gaming experience. Using JavaScript, I have
+              implemented the game's core logic, including the movement of the
+              movement of players, as well as the randomization of the dice
+              roll. The game's functionality allows players to roll the dice,
+              move their game pieces along the board.
+            </p>
+            <a href="https://polidahiya.github.io/Super-Ludo/" target="_blank"
+              >Visit Project</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="projscrolls">
+        <div class="scrolldot"></div>
+        <div class="scrolldot"></div>
+        <div class="scrolldot"></div>
+        <div class="scrolldot"></div>
+      </div>
+    </section>
+    <!--  -->
     <section class="skills" id="skills">
       <div class="skillsleft">
         <div class="skillsleftskillcontainer">
@@ -1082,25 +1368,27 @@
         }
         //
         if (document.documentElement.scrollTop < window.innerHeight - 100) {
-          setnav(0, 5);
-        }
-        if (
+          setnav(0, 6);
+        } else if (
           document.documentElement.scrollTop >= window.innerHeight - 100 &&
           document.documentElement.scrollTop < 2 * (window.innerHeight - 100)
         ) {
-          setnav(1, 6);
-        }
-        if (
+          setnav(1, 7);
+        } else if (
           document.documentElement.scrollTop > 2 * (window.innerHeight - 100) &&
           document.documentElement.scrollTop < 3 * (window.innerHeight - 100)
         ) {
-          setnav(2, 7);
-        }
-        if (
-          document.documentElement.scrollTop >
-          3 * (window.innerHeight - 100)
+          setnav(2, 8);
+        } else if (
+          document.documentElement.scrollTop > 3 * (window.innerHeight - 100) &&
+          document.documentElement.scrollTop < 4 * (window.innerHeight - 100)
         ) {
-          setnav(3, 8);
+          setnav(3, 9);
+        } else if (
+          document.documentElement.scrollTop >
+          4 * (window.innerHeight - 100)
+        ) {
+          setnav(4, 10);
         }
       });
       function setnav(value1, value2) {
@@ -1240,18 +1528,18 @@
           client requirements and enhances the user experience.`;
       let text = document.querySelector(".text");
       let i = 0;
-      let textfalg=true
-      window.addEventListener('scroll',()=>{
+      let textfalg = true;
+      window.addEventListener("scroll", () => {
         if (
-        document.documentElement.scrollTop >= window.innerHeight - 100 &&
-        document.documentElement.scrollTop < 2 * (window.innerHeight - 100)
-      ) {
-        if(textfalg){
-          textanimation()
-          textfalg=false
+          document.documentElement.scrollTop >= window.innerHeight - 100 &&
+          document.documentElement.scrollTop < 2 * (window.innerHeight - 100)
+        ) {
+          if (textfalg) {
+            textanimation();
+            textfalg = false;
+          }
         }
-      }
-      })
+      });
       function textanimation() {
         let interval = setInterval(() => {
           if (str[i] == undefined) {
@@ -1262,6 +1550,82 @@
           }
         }, 20);
       }
+      // project
+      // iframe preview
+      function iframepreview(value) {
+        let preview = document.querySelectorAll(".preview");
+        let projectiframe = document.querySelectorAll(".projectiframe");
+        let projlayer = document.querySelectorAll(".projlayer");
+        let projimg = document.querySelectorAll(".projimg");
+        preview.forEach((previewitem, previewindex) => {
+          if (value == previewindex) {
+            projimg.forEach((projimgitem, projimgindex) => {
+              if (value == projimgindex) {
+                projimgitem.style = "display:none";
+              }
+            });
+            //
+            projectiframe.forEach((projectiframeitem, projectiframeindex) => {
+              if (value == projectiframeindex) {
+                projectiframeitem.style = "display:grid";
+              }
+            });
+            //
+            projlayer.forEach((projlayeritem, projlayerindex) => {
+              if (value == projlayerindex) {
+                projlayeritem.style = "display:none";
+              }
+            });
+          }
+        });
+      }
+
+      // project scroll
+      let allproject = document.querySelector(".allprojects");
+      allproject.addEventListener("scroll", (e) => {
+        if (allproject.scrollLeft < window.innerWidth - 200) {
+          handleprojectscrolldots(1);
+        } else if (
+          allproject.scrollLeft > window.innerWidth - 200 &&
+          allproject.scrollLeft < 2 * window.innerWidth - 100
+        ) {
+          handleprojectscrolldots(2);
+        } else if (
+          allproject.scrollLeft > 2 * window.innerWidth - 200 &&
+          allproject.scrollLeft < 3 * window.innerWidth - 100
+        ) {
+          handleprojectscrolldots(3);
+        } else if (
+          allproject.scrollLeft > 3 * window.innerWidth - 200 &&
+          allproject.scrollLeft < 4 * window.innerWidth - 100
+        ) {
+          handleprojectscrolldots(4);
+        }
+      });
+      // dots function
+      let dots = document.querySelectorAll(".scrolldot");
+      function handleprojectscrolldots(value) {
+        dots.forEach((item, index) => {
+          item.style = `aspect-ratio: 1; background: var(--light);`;
+          if (value - 1 == index) {
+            item.style = `aspect-ratio: 8; background: var(--text);`;
+          }
+        });
+      }
+      // dots click
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          if (index == 0) {
+            allproject.scrollLeft = 0;
+          } else if (index == 1) {
+            allproject.scrollLeft = window.innerWidth + 100;
+          } else if (index == 2) {
+            allproject.scrollLeft = 2 * window.innerWidth + 100;
+          } else if (index == 3) {
+            allproject.scrollLeft = 3 * window.innerWidth + 100;
+          }
+        });
+      });
     </script>
   </body>
 </html>
