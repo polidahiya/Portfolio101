@@ -1615,8 +1615,19 @@
         alert("copied  " + text + "\n Press 'Enter' to close");
       }
       // tail
+      window.onresize = () => {
+        if (window.innerWidth < 786) {
+          document.querySelectorAll(".circle").forEach((item) => {
+            item.style.display = "none";
+          });
+        }
+        else{
+          document.querySelectorAll(".circle").forEach((item) => {
+            item.style.display = "block";
+          });
+        }
+      };
       const coords = { x: 0, y: 0 };
-
       const colors = [
         "#ffb56b",
         "#fdaf69",
@@ -1834,12 +1845,15 @@
           }
         });
       });
-    // loading
-    document.body.onload=()=>{
-      window.scrollTo(0,0)
-      document.querySelector(".loadingcontainer").style.display="none"
-      document.querySelector(".loadingtext").style.display="none"
-    }
+      // loading
+      document.body.onload = () => {
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+        }, 1000);
+        document.querySelector(".loadingcontainer").style.display = "none";
+        document.querySelector(".loadingtext").style.display = "none";
+      };
     </script>
   </body>
 </html>
