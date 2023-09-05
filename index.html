@@ -368,51 +368,10 @@
         justify-content: center;
         overflow: hidden;
       }
-
-      .projleft > iframe {
-        width: 100%;
-        aspect-ratio: 16/9;
-        border-radius: 10px;
-        display: none;
-      }
       .projleft > img {
         border-radius: 10px;
         width: 100%;
         aspect-ratio: 16/9;
-      }
-      .projleft:hover .projlayer {
-        opacity: 1;
-      }
-      .projlayer {
-        position: absolute;
-        width: 100%;
-        aspect-ratio: 16/9;
-        background: rgba(0, 0, 0, 0.85);
-        z-index: 10;
-        display: grid;
-        opacity: 0;
-        color: white;
-        place-items: center;
-      }
-      .preview {
-        user-select: none;
-        height: 50px;
-        width: 150px;
-        background: var(--text);
-        place-items: center;
-        border-radius: 50px;
-        margin-top: 200px;
-        display: grid;
-        transition: margin 1s, opacity 1s;
-        opacity: 0;
-      }
-      .preview:hover {
-        background: transparent;
-        border: 2px solid var(--text);
-      }
-      .projleft:hover .preview {
-        margin-top: 00px;
-        opacity: 1;
       }
       /* project right */
       .projectright {
@@ -1068,14 +1027,7 @@
       <div class="allprojects">
         <div class="projectcontainers">
           <div class="projleft">
-            <iframe
-              class="projectiframe"
-              src="https://polidahiya.github.io/Weather-Forcasts-website/"
-            ></iframe>
             <img class="projimg" src="./images/proj1.png" alt="" />
-            <div class="projlayer">
-              <div class="preview" onclick="iframepreview(0)">Preview</div>
-            </div>
           </div>
           <div class="projectright">
             <p>
@@ -1097,14 +1049,7 @@
         </div>
         <div class="projectcontainers">
           <div class="projleft">
-            <iframe
-              class="projectiframe"
-              src="https://youtube101.onrender.com/"
-            ></iframe>
             <img class="projimg" src="./images/proj2.png" alt="" />
-            <div class="projlayer">
-              <div class="preview" onclick="iframepreview(1)">Preview</div>
-            </div>
           </div>
           <div class="projectright">
             <p>
@@ -1124,14 +1069,7 @@
         </div>
         <div class="projectcontainers">
           <div class="projleft">
-            <iframe
-              class="projectiframe"
-              src="https://todolist-2vmq.onrender.com"
-            ></iframe>
             <img class="projimg" src="./images/proj3.png" alt="" />
-            <div class="projlayer">
-              <div class="preview" onclick="iframepreview(2)">Preview</div>
-            </div>
           </div>
           <div class="projectright">
             <p>
@@ -1155,14 +1093,7 @@
         </div>
         <div class="projectcontainers">
           <div class="projleft">
-            <iframe
-              class="projectiframe"
-              src="https://polidahiya.github.io/Super-Ludo/"
-            ></iframe>
             <img class="projimg" src="./images/proj4.png" alt="" />
-            <div class="projlayer">
-              <div class="preview" onclick="iframepreview(3)">Preview</div>
-            </div>
           </div>
           <div class="projectright">
             <p>
@@ -1226,7 +1157,10 @@
             <img src="images/puzzle game.png" alt="" />
             <h3>Puzzle game</h3></a
           >
-          <a href="https://polidahiya.github.io/Typing-practice/" target="_blank">
+          <a
+            href="https://polidahiya.github.io/Typing-practice/"
+            target="_blank"
+          >
             <img src="images/Typing practice.png" alt="" />
             <h3>Typing practice</h3></a
           >
@@ -1649,35 +1583,6 @@
             i++;
           }
         }, 20);
-      }
-      // project
-      // iframe preview
-      function iframepreview(value) {
-        let preview = document.querySelectorAll(".preview");
-        let projectiframe = document.querySelectorAll(".projectiframe");
-        let projlayer = document.querySelectorAll(".projlayer");
-        let projimg = document.querySelectorAll(".projimg");
-        preview.forEach((previewitem, previewindex) => {
-          if (value == previewindex) {
-            projimg.forEach((projimgitem, projimgindex) => {
-              if (value == projimgindex) {
-                projimgitem.style = "display:none";
-              }
-            });
-            //
-            projectiframe.forEach((projectiframeitem, projectiframeindex) => {
-              if (value == projectiframeindex) {
-                projectiframeitem.style = "display:grid";
-              }
-            });
-            //
-            projlayer.forEach((projlayeritem, projlayerindex) => {
-              if (value == projlayerindex) {
-                projlayeritem.style = "display:none";
-              }
-            });
-          }
-        });
       }
 
       // project scroll
