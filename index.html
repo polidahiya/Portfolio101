@@ -204,6 +204,24 @@
       .floatingrightnav {
         display: none;
       }
+      .modeeffect{
+        position: fixed;
+        height: 100px;
+        aspect-ratio: 1;
+        top: -20px;
+        right: 70px;
+        z-index: 999;
+        border-radius: 50%;
+        animation: modeeffectanim 2.5s ;
+      }
+      @keyframes modeeffectanim{
+        0%{
+          transform: scale(0);
+        }
+        100%{
+          transform: scale(4000%);
+        }
+      }
 
       /*  */
 
@@ -1516,7 +1534,18 @@
       //
       let modeflag = false;
       function changemode() {
-        if (modeflag) {
+        let modeeffect=document.createElement("div")
+        modeeffect.classList.add("modeeffect")
+        if(modeflag){
+          modeeffect.style.backgroundColor="rgb(44, 44, 44)"
+        }else{
+          modeeffect.style.backgroundColor="white"
+        }
+        document.body.appendChild(modeeffect)
+        // 
+        setTimeout(()=>{
+          modeeffect.remove()
+          if (modeflag) {
           document.documentElement.style = ` --dark: rgb(44, 44, 44);
         --light: white;`;
           document.getElementById("mode").innerText = "Light Mode";
@@ -1533,6 +1562,7 @@
           ).style = `fill: rgb(44, 44, 44)`;
           modeflag = true;
         }
+        },1200)
       }
       // about page hide and show
       let headings = document
