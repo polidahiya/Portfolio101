@@ -48,7 +48,7 @@
         font-weight: 900;
         overflow-x: hidden;
       }
-      .main{
+      .main {
         max-height: 100svh;
         scroll-behavior: smooth;
         scroll-snap-type: y mandatory;
@@ -815,7 +815,7 @@
       @media screen and (width<450px) {
         .home {
           background-size: cover;
-          background-position:40% ;
+          background-position: 40%;
           position: relative;
         }
         .home .homedetails {
@@ -935,7 +935,7 @@
           <a href="#skills"><span class="rightnavbtn">Skills</span></a>
           <a href="#contact"><span class="rightnavbtn">Contact</span></a>
           <a onclick="changemode()"
-            ><span class="rightnavbtn mode" id="mode">Light Mode</span></a
+            ><span class="rightnavbtn mode">Light Mode</span></a
           >
         </div>
         <div class="floatingrightnav rightnav">
@@ -947,7 +947,7 @@
           <a href="#skills"><span class="rightnavbtn">Skills</span></a>
           <a href="#contact"><span class="rightnavbtn">Contact</span></a>
           <a onclick="changemode()"
-            ><span class="rightnavbtn mode" id="mode">Light Mode</span></a
+            ><span class="rightnavbtn mode">Light Mode</span></a
           >
         </div>
       </section>
@@ -1353,7 +1353,7 @@
     </div>
 
     <script>
-      let main=document.querySelector(".main")
+      let main = document.querySelector(".main");
       let tomove = document.querySelectorAll(".tomove");
       const circles = document.querySelectorAll(".circle");
       function select1(elem) {
@@ -1451,10 +1451,7 @@
           main.scrollTop < 4 * (window.innerHeight - 100)
         ) {
           setnav(3, 9);
-        } else if (
-          main.scrollTop >
-          4 * (window.innerHeight - 100)
-        ) {
+        } else if (main.scrollTop > 4 * (window.innerHeight - 100)) {
           setnav(4, 10);
         }
       });
@@ -1482,15 +1479,15 @@
       }
       // tail
       if (window.innerWidth < 786) {
-          document.querySelectorAll(".circle").forEach((item) => {
-            item.style.display = "none";
-          });
-        } else {
-          document.querySelectorAll(".circle").forEach((item) => {
-            item.style.display = "block";
-          });
-        }
-      // 
+        document.querySelectorAll(".circle").forEach((item) => {
+          item.style.display = "none";
+        });
+      } else {
+        document.querySelectorAll(".circle").forEach((item) => {
+          item.style.display = "block";
+        });
+      }
+      //
       window.onresize = () => {
         if (window.innerWidth < 786) {
           document.querySelectorAll(".circle").forEach((item) => {
@@ -1578,7 +1575,9 @@
           if (modeflag) {
             main.style = ` --dark: rgb(44, 44, 44);
         --light: white;`;
-            document.getElementById("mode").innerText = "Light Mode";
+            document.querySelectorAll(".mode").forEach((item) => {
+              item.innerText = "Light Mode";
+            });
             document.getElementById(
               "Dribbble-Light-Preview"
             ).style = `fill:white`;
@@ -1586,7 +1585,9 @@
           } else {
             main.style = ` --light: rgb(44, 44, 44);
         --dark: white;`;
-            document.getElementById("mode").innerText = "Dark Mode";
+            document.querySelectorAll(".mode").forEach((item) => {
+              item.innerText = "Dark Mode";
+            });
             document.getElementById(
               "Dribbble-Light-Preview"
             ).style = `fill: rgb(44, 44, 44)`;
