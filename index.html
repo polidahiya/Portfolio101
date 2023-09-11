@@ -42,16 +42,17 @@
       .allprojects::-webkit-scrollbar {
         display: none;
       }
-
-      html {
-        scroll-behavior: smooth;
-        scroll-snap-type: y mandatory;
-      }
       body {
         margin: 0;
         font-family: poppins;
         font-weight: 900;
         overflow-x: hidden;
+      }
+      .main{
+        max-height: 100svh;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        overflow-y: scroll;
       }
       /*  */
       .ripple {
@@ -879,467 +880,480 @@
     </style>
   </head>
   <body>
-    <section class="nav">
-      <div class="leftnav">Parvesh</div>
-      <button class="rightnavbutton">
-        <svg
-          viewBox="0 -0.5 21 21"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          fill="#ffffff"
-          stroke="#ffffff"
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <title>menu_navigation_grid [#1528]</title>
-            <desc>Created with Sketch.</desc>
-            <defs></defs>
+    <div class="main">
+      <section class="nav">
+        <div class="leftnav">Parvesh</div>
+        <button class="rightnavbutton">
+          <svg
+            viewBox="0 -0.5 21 21"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            fill="#ffffff"
+            stroke="#ffffff"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g
-              id="Page-1"
-              stroke="none"
-              stroke-width="1"
-              fill="none"
-              fill-rule="evenodd"
-            >
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>menu_navigation_grid [#1528]</title>
+              <desc>Created with Sketch.</desc>
+              <defs></defs>
               <g
-                id="Dribbble-Light-Preview"
-                transform="translate(-139.000000, -200.000000)"
-                fill="#ffffff"
+                id="Page-1"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
               >
-                <g id="icons" transform="translate(56.000000, 160.000000)">
-                  <path
-                    d="M101.9,57.009 C101.9,57.56 101.38235,58 100.80275,58 L97.65275,58 C97.0742,58 96.65,57.56 96.65,57.009 L96.65,54.009 C96.65,53.458 97.0742,53 97.65275,53 L100.80275,53 C101.38235,53 101.9,53.458 101.9,54.009 L101.9,57.009 Z M100.80275,51 L97.65275,51 C95.9129,51 94.55,52.352 94.55,54.009 L94.55,57.009 C94.55,58.666 95.9129,60 97.65275,60 L100.80275,60 C102.5426,60 104,58.666 104,57.009 L104,54.009 C104,52.352 102.5426,51 100.80275,51 L100.80275,51 Z M90.35,57.009 C90.35,57.56 89.83235,58 89.25275,58 L86.10275,58 C85.5242,58 85.1,57.56 85.1,57.009 L85.1,54.009 C85.1,53.458 85.5242,53 86.10275,53 L89.25275,53 C89.83235,53 90.35,53.458 90.35,54.009 L90.35,57.009 Z M89.25275,51 L86.10275,51 C84.3629,51 83,52.352 83,54.009 L83,57.009 C83,58.666 84.3629,60 86.10275,60 L89.25275,60 C90.9926,60 92.45,58.666 92.45,57.009 L92.45,54.009 C92.45,52.352 90.9926,51 89.25275,51 L89.25275,51 Z M101.9,46.009 C101.9,46.56 101.38235,47 100.80275,47 L97.65275,47 C97.0742,47 96.65,46.56 96.65,46.009 L96.65,43.009 C96.65,42.458 97.0742,42 97.65275,42 L100.80275,42 C101.38235,42 101.9,42.458 101.9,43.009 L101.9,46.009 Z M100.80275,40 L97.65275,40 C95.9129,40 94.55,41.352 94.55,43.009 L94.55,46.009 C94.55,47.666 95.9129,49 97.65275,49 L100.80275,49 C102.5426,49 104,47.666 104,46.009 L104,43.009 C104,41.352 102.5426,40 100.80275,40 L100.80275,40 Z M90.35,46.009 C90.35,46.56 89.83235,47 89.25275,47 L86.10275,47 C85.5242,47 85.1,46.56 85.1,46.009 L85.1,43.009 C85.1,42.458 85.5242,42 86.10275,42 L89.25275,42 C89.83235,42 90.35,42.458 90.35,43.009 L90.35,46.009 Z M89.25275,40 L86.10275,40 C84.3629,40 83,41.352 83,43.009 L83,46.009 C83,47.666 84.3629,49 86.10275,49 L89.25275,49 C90.9926,49 92.45,47.666 92.45,46.009 L92.45,43.009 C92.45,41.352 90.9926,40 89.25275,40 L89.25275,40 Z"
-                    id="menu_navigation_grid-[#1528]"
-                  ></path>
+                <g
+                  id="Dribbble-Light-Preview"
+                  transform="translate(-139.000000, -200.000000)"
+                  fill="#ffffff"
+                >
+                  <g id="icons" transform="translate(56.000000, 160.000000)">
+                    <path
+                      d="M101.9,57.009 C101.9,57.56 101.38235,58 100.80275,58 L97.65275,58 C97.0742,58 96.65,57.56 96.65,57.009 L96.65,54.009 C96.65,53.458 97.0742,53 97.65275,53 L100.80275,53 C101.38235,53 101.9,53.458 101.9,54.009 L101.9,57.009 Z M100.80275,51 L97.65275,51 C95.9129,51 94.55,52.352 94.55,54.009 L94.55,57.009 C94.55,58.666 95.9129,60 97.65275,60 L100.80275,60 C102.5426,60 104,58.666 104,57.009 L104,54.009 C104,52.352 102.5426,51 100.80275,51 L100.80275,51 Z M90.35,57.009 C90.35,57.56 89.83235,58 89.25275,58 L86.10275,58 C85.5242,58 85.1,57.56 85.1,57.009 L85.1,54.009 C85.1,53.458 85.5242,53 86.10275,53 L89.25275,53 C89.83235,53 90.35,53.458 90.35,54.009 L90.35,57.009 Z M89.25275,51 L86.10275,51 C84.3629,51 83,52.352 83,54.009 L83,57.009 C83,58.666 84.3629,60 86.10275,60 L89.25275,60 C90.9926,60 92.45,58.666 92.45,57.009 L92.45,54.009 C92.45,52.352 90.9926,51 89.25275,51 L89.25275,51 Z M101.9,46.009 C101.9,46.56 101.38235,47 100.80275,47 L97.65275,47 C97.0742,47 96.65,46.56 96.65,46.009 L96.65,43.009 C96.65,42.458 97.0742,42 97.65275,42 L100.80275,42 C101.38235,42 101.9,42.458 101.9,43.009 L101.9,46.009 Z M100.80275,40 L97.65275,40 C95.9129,40 94.55,41.352 94.55,43.009 L94.55,46.009 C94.55,47.666 95.9129,49 97.65275,49 L100.80275,49 C102.5426,49 104,47.666 104,46.009 L104,43.009 C104,41.352 102.5426,40 100.80275,40 L100.80275,40 Z M90.35,46.009 C90.35,46.56 89.83235,47 89.25275,47 L86.10275,47 C85.5242,47 85.1,46.56 85.1,46.009 L85.1,43.009 C85.1,42.458 85.5242,42 86.10275,42 L89.25275,42 C89.83235,42 90.35,42.458 90.35,43.009 L90.35,46.009 Z M89.25275,40 L86.10275,40 C84.3629,40 83,41.352 83,43.009 L83,46.009 C83,47.666 84.3629,49 86.10275,49 L89.25275,49 C90.9926,49 92.45,47.666 92.45,46.009 L92.45,43.009 C92.45,41.352 90.9926,40 89.25275,40 L89.25275,40 Z"
+                      id="menu_navigation_grid-[#1528]"
+                    ></path>
+                  </g>
                 </g>
               </g>
             </g>
-          </g>
-        </svg>
-      </button>
+          </svg>
+        </button>
 
-      <div class="rightnav">
-        <a href="#home"
-          ><span class="rightnavbtn" style="color: var(--text)">Home</span></a
-        >
-        <a href="#about"><span class="rightnavbtn">About</span></a>
-        <a href="#projects"><span class="rightnavbtn">Projects</span></a>
-        <a href="#skills"><span class="rightnavbtn">Skills</span></a>
-        <a href="#contact"><span class="rightnavbtn">Contact</span></a>
-        <a onclick="changemode()"
-          ><span class="rightnavbtn mode" id="mode">Light Mode</span></a
-        >
-      </div>
-      <div class="floatingrightnav rightnav">
-        <a href="#home"
-          ><span class="rightnavbtn" style="color: var(--text)">Home</span></a
-        >
-        <a href="#about"><span class="rightnavbtn">About</span></a>
-        <a href="#projects"><span class="rightnavbtn">Projects</span></a>
-        <a href="#skills"><span class="rightnavbtn">Skills</span></a>
-        <a href="#contact"><span class="rightnavbtn">Contact</span></a>
-        <a onclick="changemode()"
-          ><span class="rightnavbtn mode" id="mode">Light Mode</span></a
-        >
-      </div>
-    </section>
-    <section class="home" id="home">
-      <div class="homedetails">
-        <h1 class="tomove homemove">
-          Hi, I'm <span>Parvesh</span><br />
-          I am a <span>Web Developer</span>
-        </h1>
-        <div class="tomove buttons homemove">
-          <a
-            href="images/cv.pdf"
-            download="Parvesh's resume.pdf"
-            class="button cv"
-            >download cv</a
+        <div class="rightnav">
+          <a href="#home"
+            ><span class="rightnavbtn" style="color: var(--text)">Home</span></a
           >
-          <a href="https://github.com/polidahiya" class="button github"
-            >Visit GitHub</a
+          <a href="#about"><span class="rightnavbtn">About</span></a>
+          <a href="#projects"><span class="rightnavbtn">Projects</span></a>
+          <a href="#skills"><span class="rightnavbtn">Skills</span></a>
+          <a href="#contact"><span class="rightnavbtn">Contact</span></a>
+          <a onclick="changemode()"
+            ><span class="rightnavbtn mode" id="mode">Light Mode</span></a
           >
         </div>
-      </div>
-    </section>
-    <section class="about" id="about">
-      <div class="aboutphoto"></div>
-      <div class="aboutdetails">
-        <p class="text"></p>
-        <div class="moredetails">
-          <div class="aboutheadings">
-            <h3>Education</h3>
-            <h3>Address</h3>
-            <h3>Hobbies</h3>
+        <div class="floatingrightnav rightnav">
+          <a href="#home"
+            ><span class="rightnavbtn" style="color: var(--text)">Home</span></a
+          >
+          <a href="#about"><span class="rightnavbtn">About</span></a>
+          <a href="#projects"><span class="rightnavbtn">Projects</span></a>
+          <a href="#skills"><span class="rightnavbtn">Skills</span></a>
+          <a href="#contact"><span class="rightnavbtn">Contact</span></a>
+          <a onclick="changemode()"
+            ><span class="rightnavbtn mode" id="mode">Light Mode</span></a
+          >
+        </div>
+      </section>
+      <section class="home" id="home">
+        <div class="homedetails">
+          <h1 class="tomove homemove">
+            Hi, I'm <span>Parvesh</span><br />
+            I am a <span>Web Developer</span>
+          </h1>
+          <div class="tomove buttons homemove">
+            <a
+              href="images/cv.pdf"
+              download="Parvesh's resume.pdf"
+              class="button cv"
+              >download cv</a
+            >
+            <a href="https://github.com/polidahiya" class="button github"
+              >Visit GitHub</a
+            >
           </div>
-          <div class="aboutdetails2">
-            <div class="education aboutshow">
-              <hr />
-              <p>
-                Bachelor of Science(Computer Science), Maharshi Dayanand
-                University, Haryana (India)
-              </p>
-              <p>
-                Masters in Informatics and Communication(Pursuing), University
-                of Delhi, Delhi (India)
-              </p>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <div class="aboutphoto"></div>
+        <div class="aboutdetails">
+          <p class="text"></p>
+          <div class="moredetails">
+            <div class="aboutheadings">
+              <h3>Education</h3>
+              <h3>Address</h3>
+              <h3>Hobbies</h3>
             </div>
-            <div class="address aboutshow">
-              <hr />
-              <p>
-                Sector 92, <br />
-                District Gurgaon,<br />
-                India
-              </p>
-            </div>
-            <div class="hobbies aboutshow">
-              <hr />
-              <div
-                style="
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  flex-direction: column;
-                "
-              >
-                <span
+            <div class="aboutdetails2">
+              <div class="education aboutshow">
+                <hr />
+                <p>
+                  Bachelor of Science(Computer Science), Maharshi Dayanand
+                  University, Haryana (India)
+                </p>
+                <p>
+                  Masters in Informatics and Communication(Pursuing), University
+                  of Delhi, Delhi (India)
+                </p>
+              </div>
+              <div class="address aboutshow">
+                <hr />
+                <p>
+                  Sector 92, <br />
+                  District Gurgaon,<br />
+                  India
+                </p>
+              </div>
+              <div class="hobbies aboutshow">
+                <hr />
+                <div
                   style="
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    gap: 20px;
+                    flex-direction: column;
                   "
-                  ><model-viewer
-                    style="height: 50px; width: 50px"
-                    src="./images/game pad.gltf"
-                    shadow-intensity="2"
-                    auto-rotate
-                  ></model-viewer>
-                  <p>Gaming</p></span
                 >
-                <span
-                  style="
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 20px;
-                  "
-                  ><model-viewer
-                    style="height: 50px; width: 50px"
-                    src="./images/camera.gltf"
-                    shadow-intensity="2"
-                    auto-rotate
-                  ></model-viewer>
-                  <p>Photo/Video Editing</p></span
-                >
+                  <span
+                    style="
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      gap: 20px;
+                    "
+                    ><model-viewer
+                      style="height: 50px; width: 50px"
+                      src="./images/game pad.gltf"
+                      shadow-intensity="2"
+                      auto-rotate
+                    ></model-viewer>
+                    <p>Gaming</p></span
+                  >
+                  <span
+                    style="
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      gap: 20px;
+                    "
+                    ><model-viewer
+                      style="height: 50px; width: 50px"
+                      src="./images/camera.gltf"
+                      shadow-intensity="2"
+                      auto-rotate
+                    ></model-viewer>
+                    <p>Photo/Video Editing</p></span
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!--  -->
-    <section class="projects" id="projects">
-      <div class="allprojects">
-        <div class="projectcontainers">
-          <div class="projleft">
-            <img class="projimg" src="./images/proj1.png" alt="" />
+      </section>
+      <!--  -->
+      <section class="projects" id="projects">
+        <div class="allprojects">
+          <div class="projectcontainers">
+            <div class="projleft">
+              <img class="projimg" src="./images/proj1.png" alt="" />
+            </div>
+            <div class="projectright">
+              <p>
+                Whether you're planning a weekend getaway, an outdoor event, or
+                just curious about the day ahead, our weather forecasting
+                website provides you with comprehensive data, including
+                temperature, humidity, wind speed, and more. Our user-friendly
+                interface, crafted using HTML, CSS, and JavaScript, offers a
+                seamless experience. By integrating the powerful Rapid API, we
+                tap into a vast network of weather data sources, ensuring you
+                receive the most up-to-date forecasts for your location
+              </p>
+              <a
+                href="https://polidahiya.github.io/Weather-Forcasts-website/"
+                target="_blank"
+                >Visit Project</a
+              >
+            </div>
           </div>
-          <div class="projectright">
-            <p>
-              Whether you're planning a weekend getaway, an outdoor event, or
-              just curious about the day ahead, our weather forecasting website
-              provides you with comprehensive data, including temperature,
-              humidity, wind speed, and more. Our user-friendly interface,
-              crafted using HTML, CSS, and JavaScript, offers a seamless
-              experience. By integrating the powerful Rapid API, we tap into a
-              vast network of weather data sources, ensuring you receive the
-              most up-to-date forecasts for your location
-            </p>
+          <div class="projectcontainers">
+            <div class="projleft">
+              <img class="projimg" src="./images/proj2.png" alt="" />
+            </div>
+            <div class="projectright">
+              <p>
+                This streaming website, built using the MERN (MongoDB, Express,
+                React, Node.js) stack, offers a seamless and immersive
+                experience for users to access and enjoy content. With a modern
+                and intuitive user interface powered by React, users can
+                effortlessly navigate through collection of videos.
+                Additionally, this website empowers content creators by allowing
+                them to sign up and seamlessly upload their videos, expanding
+                our library with diverse and engaging content for users to
+                explore and enjoy.
+              </p>
+              <a href="https://youtube101.onrender.com/" target="_blank"
+                >Visit Project</a
+              >
+            </div>
+          </div>
+          <div class="projectcontainers">
+            <div class="projleft">
+              <img class="projimg" src="./images/proj3.png" alt="" />
+            </div>
+            <div class="projectright">
+              <p>
+                This MERN-based To-Do List website offers a simple and intuitive
+                task management solution, enabling users to create and track
+                their daily activities with ease. Leveraging the power of
+                MongoDB, Express, React, and Node.js, the platform ensures
+                smooth data storage for a seamless user experience. This website
+                incorporates an admin block utilizing D3.js. The admin block
+                empowers administrators with insightful analytics and graphical
+                representations of user engagement and task completion rates.
+              </p>
+              <p>
+                Note : To visit the admin page login as "admin@gmail.com" with
+                password "1234567890"
+              </p>
+              <a href="https://todolist-2vmq.onrender.com" target="_blank"
+                >Visit Project</a
+              >
+            </div>
+          </div>
+          <div class="projectcontainers">
+            <div class="projleft">
+              <img class="projimg" src="./images/proj4.png" alt="" />
+            </div>
+            <div class="projectright">
+              <p>
+                This board game project, developed using HTML, JavaScript, and
+                CSS, brings a classic and entertaining board game to life in the
+                digital realm. The interactive and visually appealing user
+                interface, created with HTML and CSS, immerses players in a
+                vibrant and engaging gaming experience. Using JavaScript, I have
+                implemented the game's core logic, including the movement of the
+                players, as well as the randomization of the dice roll. The
+                game's functionality allows players to roll the dice, move their
+                game pieces along the board.
+              </p>
+              <a href="https://polidahiya.github.io/Super-Ludo/" target="_blank"
+                >Visit Project</a
+              >
+            </div>
+          </div>
+          <!-- allmin projects -->
+          <div class="allminprojects">
+            <a href="https://polidahiya.github.io/musicplayer/" target="_blank">
+              <img src="images/musicplayer.png" alt="" />
+              <h3>Music player</h3></a
+            >
             <a
-              href="https://polidahiya.github.io/Weather-Forcasts-website/"
+              href="https://polidahiya.github.io/Drawing-tool/"
               target="_blank"
-              >Visit Project</a
+            >
+              <img src="images/drawngtool.png" alt="" />
+              <h3>Drawing Tool</h3></a
+            >
+            <a href="https://polidahiya.github.io/cameraapp/" target="_blank">
+              <img src="images/camera app.jpg" alt="" />
+              <h3>Camera</h3></a
+            >
+            <a
+              href="https://polidahiya.github.io/balloons-shooting-game/"
+              target="_blank"
+            >
+              <img src="images/shootinggame.png" alt="" />
+              <h3>Balloons shooting game</h3></a
+            >
+            <a href="https://to-do-list-second.onrender.com/" target="_blank">
+              <img src="images/kanban project manager1.png" alt="" />
+              <h3>Kanban task manager</h3></a
+            >
+            <a href="https://polidahiya.github.io/Memory-game/" target="_blank">
+              <img src="images/memorygame.png" alt="" />
+              <h3>Memory game</h3></a
+            >
+            <a
+              href="https://polidahiya.github.io/digital-clock/"
+              target="_blank"
+            >
+              <img src="images/digiclock1.png" alt="" />
+              <h3>Digital clock</h3></a
+            >
+            <a
+              href=" https://polidahiya.github.io/Tic-Tac-Toe/"
+              target="_blank"
+            >
+              <img src="images/tactactoe.png" alt="" />
+              <h3>Tic-Tac-Toe</h3></a
+            >
+            <a href="https://polidahiya.github.io/weatherapp2/" target="_blank">
+              <img src="images/temp template.png" alt="" />
+              <h3>Temperature app</h3></a
+            >
+            <a href="https://polidahiya.github.io/puzzle-game/" target="_blank">
+              <img src="images/puzzle game.png" alt="" />
+              <h3>Puzzle game</h3></a
+            >
+            <a
+              href="https://polidahiya.github.io/Typing-practice/"
+              target="_blank"
+            >
+              <img src="images/Typing practice.png" alt="" />
+              <h3>Typing practice</h3></a
+            >
+            <a
+              href="https://polidahiya.github.io/space-shooting/"
+              target="_blank"
+            >
+              <img src="images/space shooting.png" alt="" />
+              <h3>Space shooting game</h3></a
             >
           </div>
         </div>
-        <div class="projectcontainers">
-          <div class="projleft">
-            <img class="projimg" src="./images/proj2.png" alt="" />
+        <div class="projscrolls">
+          <div class="scrolldot"></div>
+          <div class="scrolldot"></div>
+          <div class="scrolldot"></div>
+          <div class="scrolldot"></div>
+          <div class="scrolldot"></div>
+        </div>
+      </section>
+      <!--  -->
+      <section class="skills" id="skills">
+        <div class="skillsleft">
+          <div class="skillsleftskillcontainer">
+            <h2>HTML</h2>
+            <p>Advanced</p>
           </div>
-          <div class="projectright">
-            <p>
-              This streaming website, built using the MERN (MongoDB, Express,
-              React, Node.js) stack, offers a seamless and immersive experience
-              for users to access and enjoy content. With a modern and intuitive
-              user interface powered by React, users can effortlessly navigate
-              through collection of videos. Additionally, this website empowers
-              content creators by allowing them to sign up and seamlessly upload
-              their videos, expanding our library with diverse and engaging
-              content for users to explore and enjoy.
-            </p>
-            <a href="https://youtube101.onrender.com/" target="_blank"
-              >Visit Project</a
-            >
+          <div class="skillsleftskillcontainer">
+            <h2>CSS</h2>
+            <p>Advanced</p>
+          </div>
+          <div class="skillsleftskillcontainer">
+            <h2>Bootstrap</h2>
+            <p>Intermediate</p>
+          </div>
+          <div class="skillsleftskillcontainer">
+            <h2>Tailwind CSS</h2>
+            <p>Intermediate</p>
+          </div>
+          <div class="skillsleftskillcontainer">
+            <h2>JavaScript</h2>
+            <p>Advanced</p>
+          </div>
+          <div class="skillsleftskillcontainer">
+            <h2>ReactJS</h2>
+            <p>Intermediate</p>
+          </div>
+          <div class="skillsleftskillcontainer">
+            <h2>Node.js</h2>
+            <p>Intermediate</p>
+          </div>
+          <div class="skillsleftskillcontainer">
+            <h2>PHP</h2>
+            <p>Intermediate</p>
+          </div>
+          <div class="skillsleftskillcontainer">
+            <h2>MongoDB</h2>
+            <p>Intermediate</p>
+          </div>
+          <div class="skillsleftskillcontainer">
+            <h2>SQL</h2>
+            <p>Intermediate</p>
+          </div>
+          <div class="ohters">Others</div>
+          <div class="skillsleftskillcontainer">
+            <h2>C Programming</h2>
+            <p>Intermediate</p>
+          </div>
+          <div class="skillsleftskillcontainer">
+            <h2>C++ Programming</h2>
+            <p>Intermediate</p>
+          </div>
+          <div class="skillsleftskillcontainer">
+            <h2>Kotlin</h2>
+            <p>Intermediate</p>
+          </div>
+          <div class="skillsleftskillcontainer">
+            <h2>Java</h2>
+            <p>Beginner</p>
           </div>
         </div>
-        <div class="projectcontainers">
-          <div class="projleft">
-            <img class="projimg" src="./images/proj3.png" alt="" />
+        <div class="skillsright">
+          <div class="skillimagescontainer">
+            <div class="skillimages">
+              <img src="./images/sta-je-html.jpg" alt="" />
+              <img src="./images/sta-je-css.png" alt="" />
+              <img src="./images/javascript-illustration.png" alt="" />
+              <img src="./images/bootstrap-5.0-illustration.png" alt="" />
+              <img src="./images/react-js.jpg" alt="" />
+              <img src="./images/nodejs_cover_photo_smaller_size.png" alt="" />
+              <img src="./images/azure-sql-fundamentals-social.png" alt="" />
+              <img src="./images/emSBsESzw1x2Ya8W3Uo9LihD.png" alt="" />
+              <img src="./images/sta-je-html.jpg" alt="" />
+            </div>
           </div>
-          <div class="projectright">
-            <p>
-              This MERN-based To-Do List website offers a simple and intuitive
-              task management solution, enabling users to create and track their
-              daily activities with ease. Leveraging the power of MongoDB,
-              Express, React, and Node.js, the platform ensures smooth data
-              storage for a seamless user experience. This website incorporates
-              an admin block utilizing D3.js. The admin block empowers
-              administrators with insightful analytics and graphical
-              representations of user engagement and task completion rates.
-            </p>
-            <p>
-              Note : To visit the admin page login as "admin@gmail.com" with
-              password "1234567890"
-            </p>
-            <a href="https://todolist-2vmq.onrender.com" target="_blank"
-              >Visit Project</a
-            >
-          </div>
+          <p class="skillstext"></p>
         </div>
-        <div class="projectcontainers">
-          <div class="projleft">
-            <img class="projimg" src="./images/proj4.png" alt="" />
+      </section>
+      <section class="contact" id="contact">
+        <img class="contactbg" src="./images/full-stack-web-dev.jpg" alt="" />
+        <div class="contact2">
+          <div class="icons nthicon" onclick="clipboard('+91 8700705247')">
+            <img src="./images/phone.webp" alt="" />Phone No.
           </div>
-          <div class="projectright">
-            <p>
-              This board game project, developed using HTML, JavaScript, and
-              CSS, brings a classic and entertaining board game to life in the
-              digital realm. The interactive and visually appealing user
-              interface, created with HTML and CSS, immerses players in a
-              vibrant and engaging gaming experience. Using JavaScript, I have
-              implemented the game's core logic, including the movement of the
-              players, as well as the randomization of the dice roll. The game's
-              functionality allows players to roll the dice, move their game
-              pieces along the board.
-            </p>
-            <a href="https://polidahiya.github.io/Super-Ludo/" target="_blank"
-              >Visit Project</a
-            >
-          </div>
-        </div>
-        <!-- allmin projects -->
-        <div class="allminprojects">
-          <a href="https://polidahiya.github.io/musicplayer/" target="_blank">
-            <img src="images/musicplayer.png" alt="" />
-            <h3>Music player</h3></a
-          >
-          <a href="https://polidahiya.github.io/Drawing-tool/" target="_blank">
-            <img src="images/drawngtool.png" alt="" />
-            <h3>Drawing Tool</h3></a
-          >
-          <a href="https://polidahiya.github.io/cameraapp/" target="_blank">
-            <img src="images/camera app.jpg" alt="" />
-            <h3>Camera</h3></a
+          <a
+            href="https://www.linkedin.com/in/poli-dahiya-882253261"
+            target="_blank"
+            ><div class="icons">
+              <img src="./images/in.webp" alt="" />Linkedin
+            </div></a
           >
           <a
-            href="https://polidahiya.github.io/balloons-shooting-game/"
+            href="https://api.whatsapp.com/send?phone=918700705247"
             target="_blank"
+            ><div class="icons">
+              <img src="./images/wh.png" alt="" />Whatsapp
+            </div></a
           >
-            <img src="images/shootinggame.png" alt="" />
-            <h3>Balloons shooting game</h3></a
+          <div
+            class="icons nthicon"
+            onclick="clipboard('polidahiya830@gmail.com')"
           >
-          <a href="https://to-do-list-second.onrender.com/" target="_blank">
-            <img src="images/kanban project manager1.png" alt="" />
-            <h3>Kanban task manager</h3></a
-          >
-          <a href="https://polidahiya.github.io/Memory-game/" target="_blank">
-            <img src="images/memorygame.png" alt="" />
-            <h3>Memory game</h3></a
-          >
-          <a href="https://polidahiya.github.io/digital-clock/" target="_blank">
-            <img src="images/digiclock1.png" alt="" />
-            <h3>Digital clock</h3></a
-          >
-          <a href=" https://polidahiya.github.io/Tic-Tac-Toe/" target="_blank">
-            <img src="images/tactactoe.png" alt="" />
-            <h3>Tic-Tac-Toe</h3></a
-          >
-          <a href="https://polidahiya.github.io/weatherapp2/" target="_blank">
-            <img src="images/temp template.png" alt="" />
-            <h3>Temperature app</h3></a
-          >
-          <a href="https://polidahiya.github.io/puzzle-game/" target="_blank">
-            <img src="images/puzzle game.png" alt="" />
-            <h3>Puzzle game</h3></a
-          >
-          <a
-            href="https://polidahiya.github.io/Typing-practice/"
-            target="_blank"
-          >
-            <img src="images/Typing practice.png" alt="" />
-            <h3>Typing practice</h3></a
-          >
-          <a
-            href="https://polidahiya.github.io/space-shooting/"
-            target="_blank"
-          >
-            <img src="images/space shooting.png" alt="" />
-            <h3>Space shooting game</h3></a
-          >
-        </div>
-      </div>
-      <div class="projscrolls">
-        <div class="scrolldot"></div>
-        <div class="scrolldot"></div>
-        <div class="scrolldot"></div>
-        <div class="scrolldot"></div>
-        <div class="scrolldot"></div>
-      </div>
-    </section>
-    <!--  -->
-    <section class="skills" id="skills">
-      <div class="skillsleft">
-        <div class="skillsleftskillcontainer">
-          <h2>HTML</h2>
-          <p>Advanced</p>
-        </div>
-        <div class="skillsleftskillcontainer">
-          <h2>CSS</h2>
-          <p>Advanced</p>
-        </div>
-        <div class="skillsleftskillcontainer">
-          <h2>Bootstrap</h2>
-          <p>Intermediate</p>
-        </div>
-        <div class="skillsleftskillcontainer">
-          <h2>Tailwind CSS</h2>
-          <p>Intermediate</p>
-        </div>
-        <div class="skillsleftskillcontainer">
-          <h2>JavaScript</h2>
-          <p>Advanced</p>
-        </div>
-        <div class="skillsleftskillcontainer">
-          <h2>ReactJS</h2>
-          <p>Intermediate</p>
-        </div>
-        <div class="skillsleftskillcontainer">
-          <h2>Node.js</h2>
-          <p>Intermediate</p>
-        </div>
-        <div class="skillsleftskillcontainer">
-          <h2>PHP</h2>
-          <p>Intermediate</p>
-        </div>
-        <div class="skillsleftskillcontainer">
-          <h2>MongoDB</h2>
-          <p>Intermediate</p>
-        </div>
-        <div class="skillsleftskillcontainer">
-          <h2>SQL</h2>
-          <p>Intermediate</p>
-        </div>
-        <div class="ohters">Others</div>
-        <div class="skillsleftskillcontainer">
-          <h2>C Programming</h2>
-          <p>Intermediate</p>
-        </div>
-        <div class="skillsleftskillcontainer">
-          <h2>C++ Programming</h2>
-          <p>Intermediate</p>
-        </div>
-        <div class="skillsleftskillcontainer">
-          <h2>Kotlin</h2>
-          <p>Intermediate</p>
-        </div>
-        <div class="skillsleftskillcontainer">
-          <h2>Java</h2>
-          <p>Beginner</p>
-        </div>
-      </div>
-      <div class="skillsright">
-        <div class="skillimagescontainer">
-          <div class="skillimages">
-            <img src="./images/sta-je-html.jpg" alt="" />
-            <img src="./images/sta-je-css.png" alt="" />
-            <img src="./images/javascript-illustration.png" alt="" />
-            <img src="./images/bootstrap-5.0-illustration.png" alt="" />
-            <img src="./images/react-js.jpg" alt="" />
-            <img src="./images/nodejs_cover_photo_smaller_size.png" alt="" />
-            <img src="./images/azure-sql-fundamentals-social.png" alt="" />
-            <img src="./images/emSBsESzw1x2Ya8W3Uo9LihD.png" alt="" />
-            <img src="./images/sta-je-html.jpg" alt="" />
+            <img src="./images/gmail.png" alt="" />Email
           </div>
         </div>
-        <p class="skillstext"></p>
-      </div>
-    </section>
-    <section class="contact" id="contact">
-      <img class="contactbg" src="./images/full-stack-web-dev.jpg" alt="" />
-      <div class="contact2">
-        <div class="icons nthicon" onclick="clipboard('+91 8700705247')">
-          <img src="./images/phone.webp" alt="" />Phone No.
-        </div>
-        <a
-          href="https://www.linkedin.com/in/poli-dahiya-882253261"
-          target="_blank"
-          ><div class="icons">
-            <img src="./images/in.webp" alt="" />Linkedin
-          </div></a
-        >
-        <a
-          href="https://api.whatsapp.com/send?phone=918700705247"
-          target="_blank"
-          ><div class="icons">
-            <img src="./images/wh.png" alt="" />Whatsapp
-          </div></a
-        >
-        <div
-          class="icons nthicon"
-          onclick="clipboard('polidahiya830@gmail.com')"
-        >
-          <img src="./images/gmail.png" alt="" />Email
-        </div>
-      </div>
-    </section>
-    <!-- backgroud -->
-    <section class="background">
-      <span></span>
-      <span></span>
-    </section>
-    <div class="ripple"></div>
+      </section>
+      <!-- backgroud -->
+      <section class="background">
+        <span></span>
+        <span></span>
+      </section>
+      <div class="ripple"></div>
 
-    <!-- cursor tail -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <!--  -->
+      <!-- cursor tail -->
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <!--  -->
+    </div>
 
     <script>
+      let main=document.querySelector(".main")
       let tomove = document.querySelectorAll(".tomove");
       const circles = document.querySelectorAll(".circle");
       function select1(elem) {
@@ -1381,7 +1395,7 @@
       });
       //
       setInterval(() => {
-        if (document.documentElement.scrollTop == 0) {
+        if (main.scrollTop == 0) {
           select1(".nav").style = "background:transparent";
           //
           if (window.innerWidth < 450) {
@@ -1420,25 +1434,25 @@
           });
         }
         //
-        if (document.documentElement.scrollTop < window.innerHeight - 100) {
+        if (main.scrollTop < window.innerHeight - 100) {
           setnav(0, 6);
         } else if (
-          document.documentElement.scrollTop >= window.innerHeight - 100 &&
-          document.documentElement.scrollTop < 2 * (window.innerHeight - 100)
+          main.scrollTop >= window.innerHeight - 100 &&
+          main.scrollTop < 2 * (window.innerHeight - 100)
         ) {
           setnav(1, 7);
         } else if (
-          document.documentElement.scrollTop > 2 * (window.innerHeight - 100) &&
-          document.documentElement.scrollTop < 3 * (window.innerHeight - 100)
+          main.scrollTop > 2 * (window.innerHeight - 100) &&
+          main.scrollTop < 3 * (window.innerHeight - 100)
         ) {
           setnav(2, 8);
         } else if (
-          document.documentElement.scrollTop > 3 * (window.innerHeight - 100) &&
-          document.documentElement.scrollTop < 4 * (window.innerHeight - 100)
+          main.scrollTop > 3 * (window.innerHeight - 100) &&
+          main.scrollTop < 4 * (window.innerHeight - 100)
         ) {
           setnav(3, 9);
         } else if (
-          document.documentElement.scrollTop >
+          main.scrollTop >
           4 * (window.innerHeight - 100)
         ) {
           setnav(4, 10);
@@ -1552,7 +1566,7 @@
         setTimeout(() => {
           modeeffect.remove();
           if (modeflag) {
-            document.documentElement.style = ` --dark: rgb(44, 44, 44);
+            main.style = ` --dark: rgb(44, 44, 44);
         --light: white;`;
             document.getElementById("mode").innerText = "Light Mode";
             document.getElementById(
@@ -1560,7 +1574,7 @@
             ).style = `fill:white`;
             modeflag = false;
           } else {
-            document.documentElement.style = ` --light: rgb(44, 44, 44);
+            main.style = ` --light: rgb(44, 44, 44);
         --dark: white;`;
             document.getElementById("mode").innerText = "Dark Mode";
             document.getElementById(
@@ -1606,8 +1620,8 @@
       let textfalg = true;
       window.addEventListener("scroll", () => {
         if (
-          document.documentElement.scrollTop >= window.innerHeight - 100 &&
-          document.documentElement.scrollTop < 2 * (window.innerHeight - 100)
+          main.scrollTop >= window.innerHeight - 100 &&
+          main.scrollTop < 2 * (window.innerHeight - 100)
         ) {
           if (textfalg) {
             textanimation();
