@@ -1481,6 +1481,16 @@
         alert("copied  " + text + "\n Press 'Enter' to close");
       }
       // tail
+      if (window.innerWidth < 786) {
+          document.querySelectorAll(".circle").forEach((item) => {
+            item.style.display = "none";
+          });
+        } else {
+          document.querySelectorAll(".circle").forEach((item) => {
+            item.style.display = "block";
+          });
+        }
+      // 
       window.onresize = () => {
         if (window.innerWidth < 786) {
           document.querySelectorAll(".circle").forEach((item) => {
