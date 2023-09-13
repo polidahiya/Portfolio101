@@ -151,6 +151,7 @@
         width: 100%;
         transition: 0.5s;
         z-index: 20;
+        box-shadow: 0px 0px 14px 1px black;
       }
 
       .leftnav {
@@ -369,13 +370,14 @@
         border-radius: 10px;
         text-decoration: none;
       }
-      .allminprojects a:hover {
-        transform: scale(1.03);
-      }
       .allminprojects a img {
         width: 100%;
         aspect-ratio: 16/9;
         border-radius: 10px;
+        transition: 0.5s;
+      }
+      .allminprojects a img:hover {
+        transform: scale(1.03);
       }
       .allminprojects h3 {
         text-align: center;
@@ -859,7 +861,7 @@
         }
         /*  */
         .allprojects > .projectcontainers {
-          padding:0px 10px ;
+          padding: 0px 10px;
           flex-direction: column;
           gap: 0px;
         }
@@ -1396,7 +1398,7 @@
       //
       setInterval(() => {
         if (main.scrollTop == 0) {
-          select1(".nav").style = "background:transparent";
+          select1(".nav").style = "background:transparent;box-shadow: none";
           //
           if (window.innerWidth < 450) {
             document.querySelector(".homedetails").style.opacity = 0.9;
